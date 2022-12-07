@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlCadEmpresa = new System.Windows.Forms.Panel();
+            this.pnlEmpresa = new System.Windows.Forms.Panel();
             this.mkdDataCad = new System.Windows.Forms.MaskedTextBox();
-            this.mkdCnpj = new System.Windows.Forms.MaskedTextBox();
+            this.mkdCnpjCpf = new System.Windows.Forms.MaskedTextBox();
             this.lblDataCad = new System.Windows.Forms.Label();
             this.lblCargaHoraria = new System.Windows.Forms.Label();
             this.cmbCargaHoraria = new System.Windows.Forms.ComboBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.pnlTelefone = new System.Windows.Forms.Panel();
             this.dgvServico = new System.Windows.Forms.DataGridView();
             this.btnCadastrar = new System.Windows.Forms.Button();
@@ -57,45 +57,46 @@
             this.pnlBusca = new System.Windows.Forms.Panel();
             this.lblCadEmpresa = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
-            this.pnlCadEmpresa.SuspendLayout();
+            this.pnlEmpresa.SuspendLayout();
             this.pnlTelefone.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServico)).BeginInit();
             this.pnlBusca.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlCadEmpresa
+            // pnlEmpresa
             // 
-            this.pnlCadEmpresa.BackgroundImage = global::kibelezaTI16Fernanda.Properties.Resources.empresa;
-            this.pnlCadEmpresa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlCadEmpresa.Controls.Add(this.mkdDataCad);
-            this.pnlCadEmpresa.Controls.Add(this.mkdCnpj);
-            this.pnlCadEmpresa.Controls.Add(this.lblDataCad);
-            this.pnlCadEmpresa.Controls.Add(this.lblCargaHoraria);
-            this.pnlCadEmpresa.Controls.Add(this.cmbCargaHoraria);
-            this.pnlCadEmpresa.Controls.Add(this.lblStatus);
-            this.pnlCadEmpresa.Controls.Add(this.btnSalvar);
-            this.pnlCadEmpresa.Controls.Add(this.btnLimpar);
-            this.pnlCadEmpresa.Controls.Add(this.comboBox1);
-            this.pnlCadEmpresa.Controls.Add(this.pnlTelefone);
-            this.pnlCadEmpresa.Controls.Add(this.txtEmail);
-            this.pnlCadEmpresa.Controls.Add(this.txtRazaoSocial);
-            this.pnlCadEmpresa.Controls.Add(this.txtEmpresaFant);
-            this.pnlCadEmpresa.Controls.Add(this.lblRazaoSocial);
-            this.pnlCadEmpresa.Controls.Add(this.cmbDocumento);
-            this.pnlCadEmpresa.Controls.Add(this.lblEmail);
-            this.pnlCadEmpresa.Controls.Add(this.txtCodigo);
-            this.pnlCadEmpresa.Controls.Add(this.lblCodigo);
-            this.pnlCadEmpresa.Controls.Add(this.lblCnpj);
-            this.pnlCadEmpresa.Controls.Add(this.lblEmpresaFant);
-            this.pnlCadEmpresa.Controls.Add(this.lblDocumento);
-            this.pnlCadEmpresa.Controls.Add(this.pnlBusca);
-            this.pnlCadEmpresa.Location = new System.Drawing.Point(30, 71);
-            this.pnlCadEmpresa.Name = "pnlCadEmpresa";
-            this.pnlCadEmpresa.Size = new System.Drawing.Size(1200, 600);
-            this.pnlCadEmpresa.TabIndex = 4;
+            this.pnlEmpresa.BackgroundImage = global::kibelezaTI16Fernanda.Properties.Resources.empresa;
+            this.pnlEmpresa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlEmpresa.Controls.Add(this.mkdDataCad);
+            this.pnlEmpresa.Controls.Add(this.mkdCnpjCpf);
+            this.pnlEmpresa.Controls.Add(this.lblDataCad);
+            this.pnlEmpresa.Controls.Add(this.lblCargaHoraria);
+            this.pnlEmpresa.Controls.Add(this.cmbCargaHoraria);
+            this.pnlEmpresa.Controls.Add(this.lblStatus);
+            this.pnlEmpresa.Controls.Add(this.btnSalvar);
+            this.pnlEmpresa.Controls.Add(this.btnLimpar);
+            this.pnlEmpresa.Controls.Add(this.cmbStatus);
+            this.pnlEmpresa.Controls.Add(this.pnlTelefone);
+            this.pnlEmpresa.Controls.Add(this.txtEmail);
+            this.pnlEmpresa.Controls.Add(this.txtRazaoSocial);
+            this.pnlEmpresa.Controls.Add(this.txtEmpresaFant);
+            this.pnlEmpresa.Controls.Add(this.lblRazaoSocial);
+            this.pnlEmpresa.Controls.Add(this.cmbDocumento);
+            this.pnlEmpresa.Controls.Add(this.lblEmail);
+            this.pnlEmpresa.Controls.Add(this.txtCodigo);
+            this.pnlEmpresa.Controls.Add(this.lblCodigo);
+            this.pnlEmpresa.Controls.Add(this.lblCnpj);
+            this.pnlEmpresa.Controls.Add(this.lblEmpresaFant);
+            this.pnlEmpresa.Controls.Add(this.lblDocumento);
+            this.pnlEmpresa.Controls.Add(this.pnlBusca);
+            this.pnlEmpresa.Location = new System.Drawing.Point(30, 71);
+            this.pnlEmpresa.Name = "pnlEmpresa";
+            this.pnlEmpresa.Size = new System.Drawing.Size(1200, 600);
+            this.pnlEmpresa.TabIndex = 4;
             // 
             // mkdDataCad
             // 
+            this.mkdDataCad.Enabled = false;
             this.mkdDataCad.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mkdDataCad.Location = new System.Drawing.Point(957, 296);
             this.mkdDataCad.Mask = "         00/00/0000";
@@ -104,14 +105,15 @@
             this.mkdDataCad.TabIndex = 20;
             this.mkdDataCad.ValidatingType = typeof(System.DateTime);
             // 
-            // mkdCnpj
+            // mkdCnpjCpf
             // 
-            this.mkdCnpj.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mkdCnpj.Location = new System.Drawing.Point(358, 152);
-            this.mkdCnpj.Mask = "    ___.___.___/____-__";
-            this.mkdCnpj.Name = "mkdCnpj";
-            this.mkdCnpj.Size = new System.Drawing.Size(263, 31);
-            this.mkdCnpj.TabIndex = 19;
+            this.mkdCnpjCpf.Enabled = false;
+            this.mkdCnpjCpf.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mkdCnpjCpf.Location = new System.Drawing.Point(358, 152);
+            this.mkdCnpjCpf.Mask = "00,000,000/0000-00";
+            this.mkdCnpjCpf.Name = "mkdCnpjCpf";
+            this.mkdCnpjCpf.Size = new System.Drawing.Size(263, 31);
+            this.mkdCnpjCpf.TabIndex = 19;
             // 
             // lblDataCad
             // 
@@ -139,6 +141,8 @@
             // 
             // cmbCargaHoraria
             // 
+            this.cmbCargaHoraria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCargaHoraria.Enabled = false;
             this.cmbCargaHoraria.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCargaHoraria.FormattingEnabled = true;
             this.cmbCargaHoraria.Items.AddRange(new object[] {
@@ -167,6 +171,7 @@
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(52)))), ((int)(((byte)(96)))));
+            this.btnSalvar.Enabled = false;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Font = new System.Drawing.Font("Britannic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -192,17 +197,19 @@
             this.btnLimpar.Text = "LIMPAR";
             this.btnLimpar.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
+            // cmbStatus
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "ATIVO",
-            "INATIVO"});
-            this.comboBox1.Location = new System.Drawing.Point(1025, 214);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 31);
-            this.comboBox1.TabIndex = 13;
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatus.Enabled = false;
+            this.cmbStatus.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "ATIVA",
+            "INATIVA"});
+            this.cmbStatus.Location = new System.Drawing.Point(1025, 214);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(160, 31);
+            this.cmbStatus.TabIndex = 13;
             // 
             // pnlTelefone
             // 
@@ -221,6 +228,7 @@
             // 
             this.dgvServico.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
             this.dgvServico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvServico.Enabled = false;
             this.dgvServico.Location = new System.Drawing.Point(108, 0);
             this.dgvServico.Name = "dgvServico";
             this.dgvServico.Size = new System.Drawing.Size(570, 288);
@@ -270,6 +278,8 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.txtEmail.Enabled = false;
             this.txtEmail.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
             this.txtEmail.Location = new System.Drawing.Point(192, 214);
@@ -279,6 +289,8 @@
             // 
             // txtRazaoSocial
             // 
+            this.txtRazaoSocial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtRazaoSocial.Enabled = false;
             this.txtRazaoSocial.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRazaoSocial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
             this.txtRazaoSocial.Location = new System.Drawing.Point(640, 150);
@@ -288,6 +300,7 @@
             // 
             // txtEmpresaFant
             // 
+            this.txtEmpresaFant.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtEmpresaFant.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpresaFant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
             this.txtEmpresaFant.Location = new System.Drawing.Point(324, 87);
@@ -309,12 +322,14 @@
             // 
             // cmbDocumento
             // 
+            this.cmbDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDocumento.Enabled = false;
             this.cmbDocumento.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDocumento.FormattingEnabled = true;
             this.cmbDocumento.Items.AddRange(new object[] {
-            "ATIVO",
-            "INATIVO"});
-            this.cmbDocumento.Location = new System.Drawing.Point(192, 150);
+            "CNPJ",
+            "CPF"});
+            this.cmbDocumento.Location = new System.Drawing.Point(192, 154);
             this.cmbDocumento.Name = "cmbDocumento";
             this.cmbDocumento.Size = new System.Drawing.Size(160, 31);
             this.cmbDocumento.TabIndex = 2;
@@ -333,6 +348,7 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.Enabled = false;
             this.txtCodigo.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
             this.txtCodigo.Location = new System.Drawing.Point(192, 87);
@@ -423,6 +439,7 @@
             this.btnFechar.Size = new System.Drawing.Size(50, 50);
             this.btnFechar.TabIndex = 1;
             this.btnFechar.UseVisualStyleBackColor = false;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // frmCadEmpresa
             // 
@@ -431,15 +448,16 @@
             this.BackgroundImage = global::kibelezaTI16Fernanda.Properties.Resources.fundo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1487, 740);
-            this.Controls.Add(this.pnlCadEmpresa);
+            this.Controls.Add(this.pnlEmpresa);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCadEmpresa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "07-Relatorio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.pnlCadEmpresa.ResumeLayout(false);
-            this.pnlCadEmpresa.PerformLayout();
+            this.Load += new System.EventHandler(this.frmCadEmpresa_Load);
+            this.pnlEmpresa.ResumeLayout(false);
+            this.pnlEmpresa.PerformLayout();
             this.pnlTelefone.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvServico)).EndInit();
             this.pnlBusca.ResumeLayout(false);
@@ -450,7 +468,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlCadEmpresa;
+        private System.Windows.Forms.Panel pnlEmpresa;
         private System.Windows.Forms.Label lblRazaoSocial;
         private System.Windows.Forms.ComboBox cmbDocumento;
         private System.Windows.Forms.Label lblEmail;
@@ -476,8 +494,8 @@
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.MaskedTextBox mkdDataCad;
-        private System.Windows.Forms.MaskedTextBox mkdCnpj;
+        private System.Windows.Forms.MaskedTextBox mkdCnpjCpf;
     }
 }
