@@ -22,5 +22,10 @@ namespace kibelezaTI16Fernanda
             new frmMenuPrincipal().Show();
             Close();
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            new frmCadCliente().Show();
+        }
     }
 }
