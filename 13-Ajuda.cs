@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace kibelezaTI16Fernanda
 {
-    public partial class frmFuncionario : Form
+    public partial class frmAjuda : Form
     {
-        public frmFuncionario()
+        public frmAjuda()
         {
             InitializeComponent();
         }
@@ -21,12 +21,6 @@ namespace kibelezaTI16Fernanda
         {
             new frmMenuPrincipal().Show();
             Close();
-        }
-
-        private void btnCadastrar_Click(object sender, EventArgs e)
-        {
-            new frmCadFuncionario().Show();
-            Hide();
         }
     }
 }

@@ -143,5 +143,17 @@ namespace kibelezaTI16Fernanda
             new frmServico().Show();
             Hide();
         }
+
+        private void pctRelatorio_Click(object sender, EventArgs e)
+        {
+            new frmRelatorio().Show();
+            Hide();
+        }
+
+        private void lblSobre_Click(object sender, EventArgs e)
+        {
+            new frmSobre().Show();
+            Hide();
+        }
     }
 }

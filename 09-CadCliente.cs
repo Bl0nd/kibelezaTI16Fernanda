@@ -35,5 +35,6 @@ namespace kibelezaTI16Fernanda
                 cmbStatus.Enabled = true;
                 pctFoto.Enabled = true;
             }
+        }
     }
 }

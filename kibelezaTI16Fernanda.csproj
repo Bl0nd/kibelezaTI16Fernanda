@@ -106,8 +106,26 @@
     <Compile Include="10-CadServico.Designer.cs">
       <DependentUpon>10-CadServico.cs</DependentUpon>
     </Compile>
+    <Compile Include="13-Ajuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="13-Ajuda.Designer.cs">
+      <DependentUpon>13-Ajuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="11-Relatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="11-Relatorio.Designer.cs">
+      <DependentUpon>11-Relatorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="12-Sobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="12-Sobre.Designer.cs">
+      <DependentUpon>12-Sobre.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="01-Login.resx">
       <DependentUpon>01-Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +156,9 @@
     <EmbeddedResource Include="10-CadServico.resx">
       <DependentUpon>10-CadServico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="13-Ajuda.resx">
+      <DependentUpon>13-Ajuda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -148,6 +169,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="11-Relatorio.resx">
+      <DependentUpon>11-Relatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="12-Sobre.resx">
+      <DependentUpon>12-Sobre.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
