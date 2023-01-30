@@ -46,6 +46,7 @@
             // 
             // pnlCliente
             // 
+            this.pnlCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlCliente.BackgroundImage = global::kibelezaTI16Fernanda.Properties.Resources.cliente;
             this.pnlCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCliente.Controls.Add(this.dgvCliente);

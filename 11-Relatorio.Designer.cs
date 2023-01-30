@@ -162,6 +162,7 @@
             // 
             // dgvRelatorio
             // 
+            this.dgvRelatorio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvRelatorio.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
             this.dgvRelatorio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRelatorio.Location = new System.Drawing.Point(216, 166);

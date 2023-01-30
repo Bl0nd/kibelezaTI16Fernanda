@@ -36,6 +36,7 @@
             // 
             // pnlRelatorio
             // 
+            this.pnlRelatorio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlRelatorio.BackgroundImage = global::kibelezaTI16Fernanda.Properties.Resources.sobre;
             this.pnlRelatorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlRelatorio.Controls.Add(this.lblSobre);

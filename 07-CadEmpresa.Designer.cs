@@ -65,6 +65,7 @@
             // 
             // pnlEmpresa
             // 
+            this.pnlEmpresa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlEmpresa.BackgroundImage = global::kibelezaTI16Fernanda.Properties.Resources.empresa;
             this.pnlEmpresa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlEmpresa.Controls.Add(this.mkdDataCad);

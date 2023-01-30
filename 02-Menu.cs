@@ -42,15 +42,25 @@ namespace kibelezaTI16Fernanda
 
             if (hora >= 6 && hora < 12)
             {
-                lblMensagem.Text = "Bom dia " + "Gateway " + "!";
+                lblMensagem.Text = "Bom dia " + variaveis.usuario + "!";
             }
             else if (hora >= 12 && hora < 18)
             {
-                lblMensagem.Text = "Boa tarde " + "Gateway " + "!";
+                lblMensagem.Text = "Boa tarde " + variaveis.usuario + "!";
             }
             else
             {
-                lblMensagem.Text = "Boa noite " + "Gateway " + "!";
+                lblMensagem.Text = "Boa noite " + variaveis.usuario + "!";
+            }
+            if (variaveis.nivel != "ADMINISTRADOR")
+            {
+                pctFuncionario.Enabled = false;
+                pctEmpresa.Enabled = false;
+            }
+            else
+            {
+                pctFuncionario.Enabled = true;
+                pctEmpresa.Enabled = true;
             }
         }
 

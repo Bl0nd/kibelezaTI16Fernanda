@@ -61,6 +61,7 @@
             // 
             // dgvEmpresa
             // 
+            this.dgvEmpresa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvEmpresa.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
             this.dgvEmpresa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpresa.Location = new System.Drawing.Point(192, 60);

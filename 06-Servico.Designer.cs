@@ -46,6 +46,7 @@
             // 
             // pnlServico
             // 
+            this.pnlServico.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlServico.BackgroundImage = global::kibelezaTI16Fernanda.Properties.Resources.servico;
             this.pnlServico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlServico.Controls.Add(this.dgvServico);

@@ -99,6 +99,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(291, 18);
             this.txtSenha.TabIndex = 2;
+            this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha_KeyPress);
             // 
             // pictureBox1
             // 
@@ -141,6 +142,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(291, 18);
             this.txtEmail.TabIndex = 2;
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 
             // pctEmail
             // 

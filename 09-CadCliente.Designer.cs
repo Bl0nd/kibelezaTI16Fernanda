@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.pnlCadCliente = new System.Windows.Forms.Panel();
+            this.btnFoto = new System.Windows.Forms.Button();
+            this.pctFoto = new System.Windows.Forms.PictureBox();
+            this.lblFoto = new System.Windows.Forms.Label();
             this.mkdDataCad = new System.Windows.Forms.MaskedTextBox();
             this.lblDataCad = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
@@ -51,18 +54,16 @@
             this.pnlCliente = new System.Windows.Forms.Panel();
             this.lblCliente = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
-            this.lblFoto = new System.Windows.Forms.Label();
-            this.pctFoto = new System.Windows.Forms.PictureBox();
-            this.btnFoto = new System.Windows.Forms.Button();
             this.pnlCadCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctFoto)).BeginInit();
             this.pnlFoneCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoneCliente)).BeginInit();
             this.pnlCliente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlCadCliente
             // 
+            this.pnlCadCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlCadCliente.BackgroundImage = global::kibelezaTI16Fernanda.Properties.Resources.cliente;
             this.pnlCadCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCadCliente.Controls.Add(this.btnFoto);
@@ -88,6 +89,42 @@
             this.pnlCadCliente.Name = "pnlCadCliente";
             this.pnlCadCliente.Size = new System.Drawing.Size(1200, 600);
             this.pnlCadCliente.TabIndex = 6;
+            // 
+            // btnFoto
+            // 
+            this.btnFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(52)))), ((int)(((byte)(96)))));
+            this.btnFoto.FlatAppearance.BorderSize = 0;
+            this.btnFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFoto.Font = new System.Drawing.Font("Britannic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFoto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnFoto.Location = new System.Drawing.Point(1157, 361);
+            this.btnFoto.Name = "btnFoto";
+            this.btnFoto.Size = new System.Drawing.Size(34, 32);
+            this.btnFoto.TabIndex = 23;
+            this.btnFoto.Text = "+";
+            this.btnFoto.UseVisualStyleBackColor = false;
+            // 
+            // pctFoto
+            // 
+            this.pctFoto.Image = global::kibelezaTI16Fernanda.Properties.Resources.semimagem;
+            this.pctFoto.Location = new System.Drawing.Point(982, 187);
+            this.pctFoto.Name = "pctFoto";
+            this.pctFoto.Size = new System.Drawing.Size(209, 206);
+            this.pctFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctFoto.TabIndex = 22;
+            this.pctFoto.TabStop = false;
+            // 
+            // lblFoto
+            // 
+            this.lblFoto.AutoSize = true;
+            this.lblFoto.BackColor = System.Drawing.Color.Transparent;
+            this.lblFoto.Font = new System.Drawing.Font("Britannic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.lblFoto.Location = new System.Drawing.Point(917, 187);
+            this.lblFoto.Name = "lblFoto";
+            this.lblFoto.Size = new System.Drawing.Size(68, 27);
+            this.lblFoto.TabIndex = 21;
+            this.lblFoto.Text = "FOTO";
             // 
             // mkdDataCad
             // 
@@ -356,42 +393,6 @@
             this.btnFechar.UseVisualStyleBackColor = false;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
-            // lblFoto
-            // 
-            this.lblFoto.AutoSize = true;
-            this.lblFoto.BackColor = System.Drawing.Color.Transparent;
-            this.lblFoto.Font = new System.Drawing.Font("Britannic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
-            this.lblFoto.Location = new System.Drawing.Point(917, 187);
-            this.lblFoto.Name = "lblFoto";
-            this.lblFoto.Size = new System.Drawing.Size(68, 27);
-            this.lblFoto.TabIndex = 21;
-            this.lblFoto.Text = "FOTO";
-            // 
-            // pctFoto
-            // 
-            this.pctFoto.Image = global::kibelezaTI16Fernanda.Properties.Resources.semimagem;
-            this.pctFoto.Location = new System.Drawing.Point(982, 187);
-            this.pctFoto.Name = "pctFoto";
-            this.pctFoto.Size = new System.Drawing.Size(209, 206);
-            this.pctFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctFoto.TabIndex = 22;
-            this.pctFoto.TabStop = false;
-            // 
-            // btnFoto
-            // 
-            this.btnFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(52)))), ((int)(((byte)(96)))));
-            this.btnFoto.FlatAppearance.BorderSize = 0;
-            this.btnFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFoto.Font = new System.Drawing.Font("Britannic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFoto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnFoto.Location = new System.Drawing.Point(1157, 361);
-            this.btnFoto.Name = "btnFoto";
-            this.btnFoto.Size = new System.Drawing.Size(34, 32);
-            this.btnFoto.TabIndex = 23;
-            this.btnFoto.Text = "+";
-            this.btnFoto.UseVisualStyleBackColor = false;
-            // 
             // frmCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,11 +408,11 @@
             this.Load += new System.EventHandler(this.frmCadCliente_Load);
             this.pnlCadCliente.ResumeLayout(false);
             this.pnlCadCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctFoto)).EndInit();
             this.pnlFoneCliente.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoneCliente)).EndInit();
             this.pnlCliente.ResumeLayout(false);
             this.pnlCliente.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctFoto)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -46,6 +46,7 @@
             // 
             // pnlFuncionario
             // 
+            this.pnlFuncionario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlFuncionario.BackgroundImage = global::kibelezaTI16Fernanda.Properties.Resources.funcionario;
             this.pnlFuncionario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlFuncionario.Controls.Add(this.dgvFuncionario);

@@ -30,24 +30,24 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAjuda));
             this.pnlAjuda = new System.Windows.Forms.Panel();
-            this.btnFechar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabLogin = new System.Windows.Forms.TabPage();
-            this.tabMenu = new System.Windows.Forms.TabPage();
-            this.tabEmpresa = new System.Windows.Forms.TabPage();
-            this.tabFuncionario = new System.Windows.Forms.TabPage();
-            this.tabCliente = new System.Windows.Forms.TabPage();
-            this.tabServico = new System.Windows.Forms.TabPage();
-            this.tabRelatorio = new System.Windows.Forms.TabPage();
-            this.tabReserva = new System.Windows.Forms.TabPage();
             this.lblSobre = new System.Windows.Forms.Label();
+            this.tabMenu = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.tabEmpresa = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
+            this.tabFuncionario = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tabCliente = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
+            this.tabServico = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
+            this.tabRelatorio = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
+            this.tabReserva = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnFechar = new System.Windows.Forms.Button();
             this.pnlAjuda.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabLogin.SuspendLayout();
@@ -70,21 +70,6 @@
             this.pnlAjuda.Name = "pnlAjuda";
             this.pnlAjuda.Size = new System.Drawing.Size(1200, 600);
             this.pnlAjuda.TabIndex = 3;
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.BackColor = System.Drawing.Color.Transparent;
-            this.btnFechar.BackgroundImage = global::kibelezaTI16Fernanda.Properties.Resources.fechar;
-            this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFechar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnFechar.FlatAppearance.BorderSize = 0;
-            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechar.Location = new System.Drawing.Point(1133, 3);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(45, 44);
-            this.btnFechar.TabIndex = 1;
-            this.btnFechar.UseVisualStyleBackColor = false;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // tabControl1
             // 
@@ -116,6 +101,19 @@
             this.tabLogin.TabIndex = 0;
             this.tabLogin.Text = "LOGIN";
             // 
+            // lblSobre
+            // 
+            this.lblSobre.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSobre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.lblSobre.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSobre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(206)))), ((int)(((byte)(218)))));
+            this.lblSobre.Location = new System.Drawing.Point(3, 3);
+            this.lblSobre.Name = "lblSobre";
+            this.lblSobre.Size = new System.Drawing.Size(950, 486);
+            this.lblSobre.TabIndex = 3;
+            this.lblSobre.Text = resources.GetString("lblSobre.Text");
+            this.lblSobre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tabMenu
             // 
             this.tabMenu.AutoScroll = true;
@@ -128,97 +126,6 @@
             this.tabMenu.Size = new System.Drawing.Size(956, 492);
             this.tabMenu.TabIndex = 1;
             this.tabMenu.Text = "MENU";
-            // 
-            // tabEmpresa
-            // 
-            this.tabEmpresa.AutoScroll = true;
-            this.tabEmpresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
-            this.tabEmpresa.Controls.Add(this.label3);
-            this.tabEmpresa.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tabEmpresa.Location = new System.Drawing.Point(4, 32);
-            this.tabEmpresa.Name = "tabEmpresa";
-            this.tabEmpresa.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEmpresa.Size = new System.Drawing.Size(956, 492);
-            this.tabEmpresa.TabIndex = 2;
-            this.tabEmpresa.Text = "EMPRESA";
-            // 
-            // tabFuncionario
-            // 
-            this.tabFuncionario.AutoScroll = true;
-            this.tabFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
-            this.tabFuncionario.Controls.Add(this.label2);
-            this.tabFuncionario.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tabFuncionario.Location = new System.Drawing.Point(4, 32);
-            this.tabFuncionario.Name = "tabFuncionario";
-            this.tabFuncionario.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFuncionario.Size = new System.Drawing.Size(956, 492);
-            this.tabFuncionario.TabIndex = 3;
-            this.tabFuncionario.Text = "FUNCIONARIO";
-            // 
-            // tabCliente
-            // 
-            this.tabCliente.AutoScroll = true;
-            this.tabCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
-            this.tabCliente.Controls.Add(this.label4);
-            this.tabCliente.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tabCliente.Location = new System.Drawing.Point(4, 32);
-            this.tabCliente.Name = "tabCliente";
-            this.tabCliente.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCliente.Size = new System.Drawing.Size(956, 492);
-            this.tabCliente.TabIndex = 4;
-            this.tabCliente.Text = "CLIENTE";
-            // 
-            // tabServico
-            // 
-            this.tabServico.AutoScroll = true;
-            this.tabServico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
-            this.tabServico.Controls.Add(this.label5);
-            this.tabServico.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tabServico.Location = new System.Drawing.Point(4, 32);
-            this.tabServico.Name = "tabServico";
-            this.tabServico.Padding = new System.Windows.Forms.Padding(3);
-            this.tabServico.Size = new System.Drawing.Size(956, 492);
-            this.tabServico.TabIndex = 5;
-            this.tabServico.Text = "SERVIÇO";
-            // 
-            // tabRelatorio
-            // 
-            this.tabRelatorio.AutoScroll = true;
-            this.tabRelatorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
-            this.tabRelatorio.Controls.Add(this.label6);
-            this.tabRelatorio.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tabRelatorio.Location = new System.Drawing.Point(4, 32);
-            this.tabRelatorio.Name = "tabRelatorio";
-            this.tabRelatorio.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRelatorio.Size = new System.Drawing.Size(956, 492);
-            this.tabRelatorio.TabIndex = 6;
-            this.tabRelatorio.Text = "RELATÓRIO";
-            // 
-            // tabReserva
-            // 
-            this.tabReserva.AutoScroll = true;
-            this.tabReserva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
-            this.tabReserva.Controls.Add(this.label7);
-            this.tabReserva.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tabReserva.Location = new System.Drawing.Point(4, 32);
-            this.tabReserva.Name = "tabReserva";
-            this.tabReserva.Padding = new System.Windows.Forms.Padding(3);
-            this.tabReserva.Size = new System.Drawing.Size(956, 492);
-            this.tabReserva.TabIndex = 7;
-            this.tabReserva.Text = "RESERVA";
-            // 
-            // lblSobre
-            // 
-            this.lblSobre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
-            this.lblSobre.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSobre.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSobre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(206)))), ((int)(((byte)(218)))));
-            this.lblSobre.Location = new System.Drawing.Point(3, 3);
-            this.lblSobre.Name = "lblSobre";
-            this.lblSobre.Size = new System.Drawing.Size(950, 486);
-            this.lblSobre.TabIndex = 3;
-            this.lblSobre.Text = resources.GetString("lblSobre.Text");
-            this.lblSobre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -233,19 +140,18 @@
             this.label1.Text = resources.GetString("label1.Text");
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // tabEmpresa
             // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(206)))), ((int)(((byte)(218)))));
-            this.label2.Location = new System.Drawing.Point(3, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(950, 486);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Mostra a carga horaria do funcionario e se ele esta ativo ou inativo\r\nQual serviç" +
-    "o cada funcionario fará no dia";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tabEmpresa.AutoScroll = true;
+            this.tabEmpresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.tabEmpresa.Controls.Add(this.label3);
+            this.tabEmpresa.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tabEmpresa.Location = new System.Drawing.Point(4, 32);
+            this.tabEmpresa.Name = "tabEmpresa";
+            this.tabEmpresa.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEmpresa.Size = new System.Drawing.Size(956, 492);
+            this.tabEmpresa.TabIndex = 2;
+            this.tabEmpresa.Text = "EMPRESA";
             // 
             // label3
             // 
@@ -261,6 +167,46 @@
     "atriz\r\nMostra os telefones das filiais\r\nAparece se estão ativas ou inativas";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tabFuncionario
+            // 
+            this.tabFuncionario.AutoScroll = true;
+            this.tabFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.tabFuncionario.Controls.Add(this.label2);
+            this.tabFuncionario.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tabFuncionario.Location = new System.Drawing.Point(4, 32);
+            this.tabFuncionario.Name = "tabFuncionario";
+            this.tabFuncionario.Padding = new System.Windows.Forms.Padding(3);
+            this.tabFuncionario.Size = new System.Drawing.Size(956, 492);
+            this.tabFuncionario.TabIndex = 3;
+            this.tabFuncionario.Text = "FUNCIONARIO";
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(206)))), ((int)(((byte)(218)))));
+            this.label2.Location = new System.Drawing.Point(3, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(950, 486);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Mostra a carga horaria do funcionario e se ele esta ativo ou inativo\r\nQual serviç" +
+    "o cada funcionario fará no dia";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tabCliente
+            // 
+            this.tabCliente.AutoScroll = true;
+            this.tabCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.tabCliente.Controls.Add(this.label4);
+            this.tabCliente.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tabCliente.Location = new System.Drawing.Point(4, 32);
+            this.tabCliente.Name = "tabCliente";
+            this.tabCliente.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCliente.Size = new System.Drawing.Size(956, 492);
+            this.tabCliente.TabIndex = 4;
+            this.tabCliente.Text = "CLIENTE";
+            // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
@@ -274,6 +220,19 @@
             this.label4.Text = "Mostra a data e hora marcada do cliente e o procedimentos que sera realizado\r\nPod" +
     "e remarcar, desmarcar e agendar um dia para o procedimento";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tabServico
+            // 
+            this.tabServico.AutoScroll = true;
+            this.tabServico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.tabServico.Controls.Add(this.label5);
+            this.tabServico.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tabServico.Location = new System.Drawing.Point(4, 32);
+            this.tabServico.Name = "tabServico";
+            this.tabServico.Padding = new System.Windows.Forms.Padding(3);
+            this.tabServico.Size = new System.Drawing.Size(956, 492);
+            this.tabServico.TabIndex = 5;
+            this.tabServico.Text = "SERVIÇO";
             // 
             // label5
             // 
@@ -289,6 +248,19 @@
     "estão disponiveis\r\n";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tabRelatorio
+            // 
+            this.tabRelatorio.AutoScroll = true;
+            this.tabRelatorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.tabRelatorio.Controls.Add(this.label6);
+            this.tabRelatorio.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tabRelatorio.Location = new System.Drawing.Point(4, 32);
+            this.tabRelatorio.Name = "tabRelatorio";
+            this.tabRelatorio.Padding = new System.Windows.Forms.Padding(3);
+            this.tabRelatorio.Size = new System.Drawing.Size(956, 492);
+            this.tabRelatorio.TabIndex = 6;
+            this.tabRelatorio.Text = "RELATÓRIO";
+            // 
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
@@ -303,6 +275,19 @@
     "is cancelaram";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tabReserva
+            // 
+            this.tabReserva.AutoScroll = true;
+            this.tabReserva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.tabReserva.Controls.Add(this.label7);
+            this.tabReserva.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tabReserva.Location = new System.Drawing.Point(4, 32);
+            this.tabReserva.Name = "tabReserva";
+            this.tabReserva.Padding = new System.Windows.Forms.Padding(3);
+            this.tabReserva.Size = new System.Drawing.Size(956, 492);
+            this.tabReserva.TabIndex = 7;
+            this.tabReserva.Text = "RESERVA";
+            // 
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
@@ -316,6 +301,21 @@
             this.label7.Text = "Mostra os dias disponiveis para marcar os clientes\r\nE os procedimentos que cada f" +
     "uncionario realiza";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.BackColor = System.Drawing.Color.Transparent;
+            this.btnFechar.BackgroundImage = global::kibelezaTI16Fernanda.Properties.Resources.fechar;
+            this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFechar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnFechar.FlatAppearance.BorderSize = 0;
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Location = new System.Drawing.Point(1133, 3);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(45, 44);
+            this.btnFechar.TabIndex = 1;
+            this.btnFechar.UseVisualStyleBackColor = false;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // frmAjuda
             // 
