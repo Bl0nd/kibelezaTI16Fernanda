@@ -489,9 +489,9 @@
             this.lblCliente.ForeColor = System.Drawing.Color.White;
             this.lblCliente.Location = new System.Drawing.Point(328, 3);
             this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(336, 38);
+            this.lblCliente.Size = new System.Drawing.Size(343, 38);
             this.lblCliente.TabIndex = 0;
-            this.lblCliente.Text = "CADASTRAR CLIENTE";
+            this.lblCliente.Text = "CADASTRAR SERVIÇO";
             // 
             // btnFechar
             // 

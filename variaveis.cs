@@ -13,5 +13,14 @@ namespace kibelezaTI16Fernanda
 
         //Login
         public static string usuario, senha, nivel;
+
+        //Cliente
+        public static int codCliente;
+        public static string nomeCliente;
+
+        //Empresa
+        public static int codEmpresa;
+        public static string nomeEmpresa, cnpjCpfEmpresa, razaoSocialEmpresa, emailEmpresa, statusEmpresa;
+        public static DateTime dataCadastroEmpresa, horarioAtendEmpresa;
     }
 }
