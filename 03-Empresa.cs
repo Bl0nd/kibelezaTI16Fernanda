@@ -118,6 +118,10 @@ namespace kibelezaTI16Fernanda
         private void frmEmpresa_Load(object sender, EventArgs e)
         {
             pnlEmpresa.Location = new Point(this.Width / 2 - pnlEmpresa.Width / 2, this.Height / 2 - pnlEmpresa.Height / 2);
+
+            variaveis.linhaSelecionada = -1;
+
+            CarregarEmpresa();
         }
 
         private void cmbStatus_SelectedIndexChanged(object sender, EventArgs e)
@@ -140,7 +144,7 @@ namespace kibelezaTI16Fernanda
         {
             variaveis.nomeEmpresa = txtEmpresa.Text;
 
-            if(variaveis.nomeEmpresa == "")
+            if (variaveis.nomeEmpresa == "")
             {
                 cmbStatus.Enabled = true;
                 cmbStatus.Text = "TODOS";
@@ -152,6 +156,43 @@ namespace kibelezaTI16Fernanda
                 cmbStatus.Text = "TODOS";
                 CarregarEmpresaNome();
             }
+        }
+
+        private void dgvEmpresa_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            variaveis.linhaSelecionada = int.Parse(e.RowIndex.ToString());
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                variaveis.codEmpresa = Convert.ToInt32(dgvEmpresa[0, variaveis.linhaSelecionada].Value);
+            }
+
+        }
+
+        private void dgvEmpresa_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dgvEmpresa.Sort(dgvEmpresa.Columns[1], ListSortDirection.Ascending);
+            dgvEmpresa.ClearSelection();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                variaveis.funcao = "ALTERAR";
+                new frmCadEmpresa().Show();
+                Hide();
+            }
+            else
+            {
+                MessageBox.Show("Para alterar selecione uma linha");
+            }
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            variaveis.funcao = "CADASTRAR";
+            new frmCadEmpresa().Show();
+            Hide();
         }
     }
 }

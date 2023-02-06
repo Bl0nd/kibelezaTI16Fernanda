@@ -45,7 +45,7 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtRazaoSocial = new System.Windows.Forms.TextBox();
-            this.txtEmpresaFant = new System.Windows.Forms.TextBox();
+            this.txtNomeFantasia = new System.Windows.Forms.TextBox();
             this.lblRazaoSocial = new System.Windows.Forms.Label();
             this.cmbDocumento = new System.Windows.Forms.ComboBox();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -54,13 +54,13 @@
             this.lblCnpj = new System.Windows.Forms.Label();
             this.lblEmpresaFant = new System.Windows.Forms.Label();
             this.lblDocumento = new System.Windows.Forms.Label();
-            this.pnlBusca = new System.Windows.Forms.Panel();
+            this.lblTitulo = new System.Windows.Forms.Panel();
             this.lblCadEmpresa = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
             this.pnlEmpresa.SuspendLayout();
             this.pnlTelefone.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServico)).BeginInit();
-            this.pnlBusca.SuspendLayout();
+            this.lblTitulo.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlEmpresa
@@ -80,7 +80,7 @@
             this.pnlEmpresa.Controls.Add(this.pnlTelefone);
             this.pnlEmpresa.Controls.Add(this.txtEmail);
             this.pnlEmpresa.Controls.Add(this.txtRazaoSocial);
-            this.pnlEmpresa.Controls.Add(this.txtEmpresaFant);
+            this.pnlEmpresa.Controls.Add(this.txtNomeFantasia);
             this.pnlEmpresa.Controls.Add(this.lblRazaoSocial);
             this.pnlEmpresa.Controls.Add(this.cmbDocumento);
             this.pnlEmpresa.Controls.Add(this.lblEmail);
@@ -89,7 +89,7 @@
             this.pnlEmpresa.Controls.Add(this.lblCnpj);
             this.pnlEmpresa.Controls.Add(this.lblEmpresaFant);
             this.pnlEmpresa.Controls.Add(this.lblDocumento);
-            this.pnlEmpresa.Controls.Add(this.pnlBusca);
+            this.pnlEmpresa.Controls.Add(this.lblTitulo);
             this.pnlEmpresa.Location = new System.Drawing.Point(30, 71);
             this.pnlEmpresa.Name = "pnlEmpresa";
             this.pnlEmpresa.Size = new System.Drawing.Size(1200, 600);
@@ -299,15 +299,15 @@
             this.txtRazaoSocial.Size = new System.Drawing.Size(545, 31);
             this.txtRazaoSocial.TabIndex = 10;
             // 
-            // txtEmpresaFant
+            // txtNomeFantasia
             // 
-            this.txtEmpresaFant.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtEmpresaFant.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmpresaFant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
-            this.txtEmpresaFant.Location = new System.Drawing.Point(324, 87);
-            this.txtEmpresaFant.Name = "txtEmpresaFant";
-            this.txtEmpresaFant.Size = new System.Drawing.Size(867, 31);
-            this.txtEmpresaFant.TabIndex = 8;
+            this.txtNomeFantasia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNomeFantasia.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeFantasia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.txtNomeFantasia.Location = new System.Drawing.Point(324, 87);
+            this.txtNomeFantasia.Name = "txtNomeFantasia";
+            this.txtNomeFantasia.Size = new System.Drawing.Size(867, 31);
+            this.txtNomeFantasia.TabIndex = 8;
             // 
             // lblRazaoSocial
             // 
@@ -405,15 +405,15 @@
             this.lblDocumento.TabIndex = 6;
             this.lblDocumento.Text = "DOCUMENTO";
             // 
-            // pnlBusca
+            // lblTitulo
             // 
-            this.pnlBusca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
-            this.pnlBusca.Controls.Add(this.lblCadEmpresa);
-            this.pnlBusca.Controls.Add(this.btnFechar);
-            this.pnlBusca.Location = new System.Drawing.Point(186, 0);
-            this.pnlBusca.Name = "pnlBusca";
-            this.pnlBusca.Size = new System.Drawing.Size(1014, 54);
-            this.pnlBusca.TabIndex = 0;
+            this.lblTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.lblTitulo.Controls.Add(this.lblCadEmpresa);
+            this.lblTitulo.Controls.Add(this.btnFechar);
+            this.lblTitulo.Location = new System.Drawing.Point(186, 0);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(1014, 54);
+            this.lblTitulo.TabIndex = 0;
             // 
             // lblCadEmpresa
             // 
@@ -461,8 +461,8 @@
             this.pnlEmpresa.PerformLayout();
             this.pnlTelefone.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvServico)).EndInit();
-            this.pnlBusca.ResumeLayout(false);
-            this.pnlBusca.PerformLayout();
+            this.lblTitulo.ResumeLayout(false);
+            this.lblTitulo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -482,10 +482,10 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.Panel pnlBusca;
+        private System.Windows.Forms.Panel lblTitulo;
         private System.Windows.Forms.Label lblCadEmpresa;
         private System.Windows.Forms.Button btnFechar;
-        private System.Windows.Forms.TextBox txtEmpresaFant;
+        private System.Windows.Forms.TextBox txtNomeFantasia;
         private System.Windows.Forms.Panel pnlTelefone;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtRazaoSocial;
