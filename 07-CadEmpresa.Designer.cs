@@ -247,6 +247,7 @@
             this.dgvFoneEmpresa.Size = new System.Drawing.Size(570, 288);
             this.dgvFoneEmpresa.TabIndex = 5;
             this.dgvFoneEmpresa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFoneEmpresa_CellClick);
+            this.dgvFoneEmpresa.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvFoneEmpresa_ColumnHeaderMouseClick);
             // 
             // btnCadastrar
             // 

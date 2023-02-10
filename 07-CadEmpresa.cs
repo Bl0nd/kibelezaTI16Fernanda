@@ -435,5 +435,11 @@ namespace kibelezaTI16Fernanda
                 variaveis.codFoneEmpresa = Convert.ToInt32(dgvFoneEmpresa[0, variaveis.linhaSelecionada].Value);
             }
         }
+
+        private void dgvFoneEmpresa_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dgvFoneEmpresa.Sort(dgvFoneEmpresa.Columns[1], ListSortDirection.Ascending);
+            dgvFoneEmpresa.ClearSelection();
+        }
     }
 }
