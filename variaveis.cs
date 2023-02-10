@@ -23,5 +23,9 @@ namespace kibelezaTI16Fernanda
         public static int codEmpresa;
         public static string nomeEmpresa, cnpjCpfEmpresa, razaoSocialEmpresa, emailEmpresa, statusEmpresa;
         public static DateTime dataCadastroEmpresa, horarioAtendEmpresa;
+
+        //Fone Empresa
+        public static int codFoneEmpresa;
+        public static string numeroFoneEmpresa, operadoraEmpresa, descricaoEmpresa;
     }
 }

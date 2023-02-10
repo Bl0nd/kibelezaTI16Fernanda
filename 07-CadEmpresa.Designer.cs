@@ -39,7 +39,7 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.pnlTelefone = new System.Windows.Forms.Panel();
-            this.dgvServico = new System.Windows.Forms.DataGridView();
+            this.dgvFoneEmpresa = new System.Windows.Forms.DataGridView();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -57,10 +57,26 @@
             this.lblTitulo = new System.Windows.Forms.Panel();
             this.lblCadEmpresa = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.pnlFone = new System.Windows.Forms.Panel();
+            this.pnlCodigo = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnFecharFone = new System.Windows.Forms.Button();
+            this.txtFoneCodigo = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.mkdFone = new System.Windows.Forms.MaskedTextBox();
+            this.lblDescricao = new System.Windows.Forms.Label();
+            this.lblNumTelefone = new System.Windows.Forms.Label();
+            this.lblOperadora = new System.Windows.Forms.Label();
+            this.cmbOperadora = new System.Windows.Forms.ComboBox();
+            this.btnLimparFone = new System.Windows.Forms.Button();
+            this.btnSalvarFone = new System.Windows.Forms.Button();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
             this.pnlEmpresa.SuspendLayout();
             this.pnlTelefone.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvServico)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFoneEmpresa)).BeginInit();
             this.lblTitulo.SuspendLayout();
+            this.pnlFone.SuspendLayout();
+            this.pnlCodigo.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlEmpresa
@@ -90,14 +106,13 @@
             this.pnlEmpresa.Controls.Add(this.lblEmpresaFant);
             this.pnlEmpresa.Controls.Add(this.lblDocumento);
             this.pnlEmpresa.Controls.Add(this.lblTitulo);
-            this.pnlEmpresa.Location = new System.Drawing.Point(30, 71);
+            this.pnlEmpresa.Location = new System.Drawing.Point(24, 83);
             this.pnlEmpresa.Name = "pnlEmpresa";
             this.pnlEmpresa.Size = new System.Drawing.Size(1200, 600);
             this.pnlEmpresa.TabIndex = 4;
             // 
             // mkdDataCad
             // 
-            this.mkdDataCad.Enabled = false;
             this.mkdDataCad.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mkdDataCad.Location = new System.Drawing.Point(957, 296);
             this.mkdDataCad.Mask = "         00/00/0000";
@@ -108,7 +123,6 @@
             // 
             // mkdCnpjCpf
             // 
-            this.mkdCnpjCpf.Enabled = false;
             this.mkdCnpjCpf.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mkdCnpjCpf.Location = new System.Drawing.Point(358, 152);
             this.mkdCnpjCpf.Mask = "00,000,000/0000-00";
@@ -143,7 +157,6 @@
             // cmbCargaHoraria
             // 
             this.cmbCargaHoraria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCargaHoraria.Enabled = false;
             this.cmbCargaHoraria.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCargaHoraria.FormattingEnabled = true;
             this.cmbCargaHoraria.Items.AddRange(new object[] {
@@ -172,7 +185,6 @@
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(52)))), ((int)(((byte)(96)))));
-            this.btnSalvar.Enabled = false;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Font = new System.Drawing.Font("Britannic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -202,7 +214,6 @@
             // cmbStatus
             // 
             this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbStatus.Enabled = false;
             this.cmbStatus.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Items.AddRange(new object[] {
@@ -217,7 +228,7 @@
             // 
             this.pnlTelefone.BackgroundImage = global::kibelezaTI16Fernanda.Properties.Resources.telefone;
             this.pnlTelefone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlTelefone.Controls.Add(this.dgvServico);
+            this.pnlTelefone.Controls.Add(this.dgvFoneEmpresa);
             this.pnlTelefone.Controls.Add(this.btnCadastrar);
             this.pnlTelefone.Controls.Add(this.btnAlterar);
             this.pnlTelefone.Controls.Add(this.btnExcluir);
@@ -226,15 +237,16 @@
             this.pnlTelefone.Size = new System.Drawing.Size(678, 348);
             this.pnlTelefone.TabIndex = 12;
             // 
-            // dgvServico
+            // dgvFoneEmpresa
             // 
-            this.dgvServico.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
-            this.dgvServico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvServico.Enabled = false;
-            this.dgvServico.Location = new System.Drawing.Point(108, 0);
-            this.dgvServico.Name = "dgvServico";
-            this.dgvServico.Size = new System.Drawing.Size(570, 288);
-            this.dgvServico.TabIndex = 5;
+            this.dgvFoneEmpresa.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.dgvFoneEmpresa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFoneEmpresa.Enabled = false;
+            this.dgvFoneEmpresa.Location = new System.Drawing.Point(108, 0);
+            this.dgvFoneEmpresa.Name = "dgvFoneEmpresa";
+            this.dgvFoneEmpresa.Size = new System.Drawing.Size(570, 288);
+            this.dgvFoneEmpresa.TabIndex = 5;
+            this.dgvFoneEmpresa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFoneEmpresa_CellClick);
             // 
             // btnCadastrar
             // 
@@ -249,6 +261,7 @@
             this.btnCadastrar.TabIndex = 2;
             this.btnCadastrar.Text = "CADASTRAR";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnAlterar
             // 
@@ -263,6 +276,7 @@
             this.btnAlterar.TabIndex = 3;
             this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnExcluir
             // 
@@ -280,8 +294,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.txtEmail.Enabled = false;
+            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtEmail.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
             this.txtEmail.Location = new System.Drawing.Point(192, 214);
@@ -292,7 +305,6 @@
             // txtRazaoSocial
             // 
             this.txtRazaoSocial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtRazaoSocial.Enabled = false;
             this.txtRazaoSocial.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRazaoSocial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
             this.txtRazaoSocial.Location = new System.Drawing.Point(640, 150);
@@ -335,6 +347,7 @@
             this.cmbDocumento.Name = "cmbDocumento";
             this.cmbDocumento.Size = new System.Drawing.Size(160, 31);
             this.cmbDocumento.TabIndex = 2;
+            this.cmbDocumento.SelectedIndexChanged += new System.EventHandler(this.cmbDocumento_SelectedIndexChanged);
             // 
             // lblEmail
             // 
@@ -443,13 +456,200 @@
             this.btnFechar.UseVisualStyleBackColor = false;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
+            // pnlFone
+            // 
+            this.pnlFone.BackgroundImage = global::kibelezaTI16Fernanda.Properties.Resources.telefone;
+            this.pnlFone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlFone.Controls.Add(this.pnlCodigo);
+            this.pnlFone.Controls.Add(this.mkdFone);
+            this.pnlFone.Controls.Add(this.lblDescricao);
+            this.pnlFone.Controls.Add(this.lblNumTelefone);
+            this.pnlFone.Controls.Add(this.lblOperadora);
+            this.pnlFone.Controls.Add(this.cmbOperadora);
+            this.pnlFone.Controls.Add(this.btnLimparFone);
+            this.pnlFone.Controls.Add(this.btnSalvarFone);
+            this.pnlFone.Controls.Add(this.txtDescricao);
+            this.pnlFone.Location = new System.Drawing.Point(1263, 83);
+            this.pnlFone.Name = "pnlFone";
+            this.pnlFone.Size = new System.Drawing.Size(500, 325);
+            this.pnlFone.TabIndex = 5;
+            this.pnlFone.Visible = false;
+            // 
+            // pnlCodigo
+            // 
+            this.pnlCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.pnlCodigo.Controls.Add(this.label1);
+            this.pnlCodigo.Controls.Add(this.btnFecharFone);
+            this.pnlCodigo.Controls.Add(this.txtFoneCodigo);
+            this.pnlCodigo.Controls.Add(this.button1);
+            this.pnlCodigo.Location = new System.Drawing.Point(77, 0);
+            this.pnlCodigo.Name = "pnlCodigo";
+            this.pnlCodigo.Size = new System.Drawing.Size(423, 54);
+            this.pnlCodigo.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Britannic Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(29, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 38);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "CÓDIGO";
+            // 
+            // btnFecharFone
+            // 
+            this.btnFecharFone.BackColor = System.Drawing.Color.Transparent;
+            this.btnFecharFone.BackgroundImage = global::kibelezaTI16Fernanda.Properties.Resources.fechar;
+            this.btnFecharFone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFecharFone.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnFecharFone.FlatAppearance.BorderSize = 0;
+            this.btnFecharFone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFecharFone.Location = new System.Drawing.Point(370, 0);
+            this.btnFecharFone.Name = "btnFecharFone";
+            this.btnFecharFone.Size = new System.Drawing.Size(50, 50);
+            this.btnFecharFone.TabIndex = 2;
+            this.btnFecharFone.UseVisualStyleBackColor = false;
+            this.btnFecharFone.Click += new System.EventHandler(this.btnFecharFone_Click_1);
+            // 
+            // txtFoneCodigo
+            // 
+            this.txtFoneCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtFoneCodigo.Enabled = false;
+            this.txtFoneCodigo.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFoneCodigo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.txtFoneCodigo.Location = new System.Drawing.Point(175, 8);
+            this.txtFoneCodigo.Name = "txtFoneCodigo";
+            this.txtFoneCodigo.Size = new System.Drawing.Size(145, 31);
+            this.txtFoneCodigo.TabIndex = 22;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::kibelezaTI16Fernanda.Properties.Resources.fechar;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(955, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(50, 50);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // mkdFone
+            // 
+            this.mkdFone.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mkdFone.Location = new System.Drawing.Point(156, 90);
+            this.mkdFone.Mask = "(00)000000-0000";
+            this.mkdFone.Name = "mkdFone";
+            this.mkdFone.Size = new System.Drawing.Size(263, 31);
+            this.mkdFone.TabIndex = 21;
+            this.mkdFone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mkdFone_KeyPress);
+            // 
+            // lblDescricao
+            // 
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.BackColor = System.Drawing.Color.Transparent;
+            this.lblDescricao.Font = new System.Drawing.Font("Britannic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.lblDescricao.Location = new System.Drawing.Point(213, 201);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(133, 27);
+            this.lblDescricao.TabIndex = 24;
+            this.lblDescricao.Text = "DESCRIÇÃO";
+            // 
+            // lblNumTelefone
+            // 
+            this.lblNumTelefone.AutoSize = true;
+            this.lblNumTelefone.BackColor = System.Drawing.Color.Transparent;
+            this.lblNumTelefone.Font = new System.Drawing.Font("Britannic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumTelefone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.lblNumTelefone.Location = new System.Drawing.Point(173, 56);
+            this.lblNumTelefone.Name = "lblNumTelefone";
+            this.lblNumTelefone.Size = new System.Drawing.Size(215, 27);
+            this.lblNumTelefone.TabIndex = 21;
+            this.lblNumTelefone.Text = "NÚMERO TELEFONE";
+            // 
+            // lblOperadora
+            // 
+            this.lblOperadora.AutoSize = true;
+            this.lblOperadora.BackColor = System.Drawing.Color.Transparent;
+            this.lblOperadora.Font = new System.Drawing.Font("Britannic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperadora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.lblOperadora.Location = new System.Drawing.Point(213, 124);
+            this.lblOperadora.Name = "lblOperadora";
+            this.lblOperadora.Size = new System.Drawing.Size(143, 27);
+            this.lblOperadora.TabIndex = 22;
+            this.lblOperadora.Text = "OPERADORA";
+            // 
+            // cmbOperadora
+            // 
+            this.cmbOperadora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOperadora.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbOperadora.FormattingEnabled = true;
+            this.cmbOperadora.Items.AddRange(new object[] {
+            "TIM",
+            "VIVO",
+            "CLARO",
+            "OI"});
+            this.cmbOperadora.Location = new System.Drawing.Point(169, 154);
+            this.cmbOperadora.Name = "cmbOperadora";
+            this.cmbOperadora.Size = new System.Drawing.Size(228, 31);
+            this.cmbOperadora.TabIndex = 21;
+            this.cmbOperadora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbOperadora_KeyPress);
+            // 
+            // btnLimparFone
+            // 
+            this.btnLimparFone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(52)))), ((int)(((byte)(96)))));
+            this.btnLimparFone.FlatAppearance.BorderSize = 0;
+            this.btnLimparFone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimparFone.Font = new System.Drawing.Font("Britannic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimparFone.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnLimparFone.Location = new System.Drawing.Point(113, 280);
+            this.btnLimparFone.Name = "btnLimparFone";
+            this.btnLimparFone.Size = new System.Drawing.Size(160, 36);
+            this.btnLimparFone.TabIndex = 21;
+            this.btnLimparFone.Text = "LIMPAR";
+            this.btnLimparFone.UseVisualStyleBackColor = false;
+            this.btnLimparFone.Click += new System.EventHandler(this.btnLimparFone_Click);
+            // 
+            // btnSalvarFone
+            // 
+            this.btnSalvarFone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(52)))), ((int)(((byte)(96)))));
+            this.btnSalvarFone.FlatAppearance.BorderSize = 0;
+            this.btnSalvarFone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvarFone.Font = new System.Drawing.Font("Britannic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarFone.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSalvarFone.Location = new System.Drawing.Point(316, 280);
+            this.btnSalvarFone.Name = "btnSalvarFone";
+            this.btnSalvarFone.Size = new System.Drawing.Size(160, 36);
+            this.btnSalvarFone.TabIndex = 21;
+            this.btnSalvarFone.Text = "SALVAR";
+            this.btnSalvarFone.UseVisualStyleBackColor = false;
+            this.btnSalvarFone.Click += new System.EventHandler(this.btnSalvarFone_Click);
+            // 
+            // txtDescricao
+            // 
+            this.txtDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDescricao.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.txtDescricao.Location = new System.Drawing.Point(169, 231);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(228, 31);
+            this.txtDescricao.TabIndex = 21;
+            this.txtDescricao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescricao_KeyPress);
+            // 
             // frmCadEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::kibelezaTI16Fernanda.Properties.Resources.fundo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1487, 740);
+            this.ClientSize = new System.Drawing.Size(1804, 742);
+            this.Controls.Add(this.pnlFone);
             this.Controls.Add(this.pnlEmpresa);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -461,9 +661,13 @@
             this.pnlEmpresa.ResumeLayout(false);
             this.pnlEmpresa.PerformLayout();
             this.pnlTelefone.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvServico)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFoneEmpresa)).EndInit();
             this.lblTitulo.ResumeLayout(false);
             this.lblTitulo.PerformLayout();
+            this.pnlFone.ResumeLayout(false);
+            this.pnlFone.PerformLayout();
+            this.pnlCodigo.ResumeLayout(false);
+            this.pnlCodigo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -475,7 +679,7 @@
         private System.Windows.Forms.ComboBox cmbDocumento;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.DataGridView dgvServico;
+        private System.Windows.Forms.DataGridView dgvFoneEmpresa;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Label lblCnpj;
         private System.Windows.Forms.Label lblEmpresaFant;
@@ -499,5 +703,19 @@
         private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.MaskedTextBox mkdDataCad;
         private System.Windows.Forms.MaskedTextBox mkdCnpjCpf;
+        private System.Windows.Forms.Panel pnlFone;
+        private System.Windows.Forms.Panel pnlCodigo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSalvarFone;
+        private System.Windows.Forms.TextBox txtDescricao;
+        private System.Windows.Forms.TextBox txtFoneCodigo;
+        private System.Windows.Forms.Button btnLimparFone;
+        private System.Windows.Forms.Label lblOperadora;
+        private System.Windows.Forms.ComboBox cmbOperadora;
+        private System.Windows.Forms.Label lblDescricao;
+        private System.Windows.Forms.Label lblNumTelefone;
+        private System.Windows.Forms.MaskedTextBox mkdFone;
+        private System.Windows.Forms.Button btnFecharFone;
     }
 }

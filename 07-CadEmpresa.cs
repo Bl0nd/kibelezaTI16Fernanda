@@ -110,12 +110,129 @@ namespace kibelezaTI16Fernanda
             }
         }
 
+        //Telefone
+        private void InserirFoneEmpresa()
+        {
+            try
+            {
+                banco.Conectar();
+                string inserir = "INSERT INTO `foneempresa`(`idFoneEmpresa`,`numeroEmpresa`,`operFoneEmpresa`,`descFoneEmpresa`,`idEmpresa`) VALUES (DEFAULT,@numeroFone,@operFone,@descFone,@codEmpresa);";
+                MySqlCommand cmd = new MySqlCommand(inserir, banco.conexao);
+                cmd.Parameters.AddWithValue("@numeroFone", variaveis.numeroFoneEmpresa);
+                cmd.Parameters.AddWithValue("@operFone", variaveis.operadoraEmpresa);
+                cmd.Parameters.AddWithValue("@descFone", variaveis.descricaoEmpresa);
+                cmd.Parameters.AddWithValue("@codEmpresa", variaveis.codEmpresa);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("TELEFONE DA EMPRESA CADASTRADO COM SUCESSO !", "CADASTRO");
+                banco.Desconectar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar o Telefone \n\n" + ex);
+            }
+        }
         private void btnFechar_Click(object sender, EventArgs e)
         {
             new frmEmpresa().Show();
             Close();
         }
 
+        private void CarregarUltimaEmpresa()
+        {
+            try
+            {
+                banco.Conectar();
+                string selecionar = "SELECT MAX(idEmpresa) FROM ´empresa`";
+                MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexao);
+                MySqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    variaveis.codEmpresa = dr.GetInt32(0);
+                }
+                banco.Desconectar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar última Empresa \n\n" + ex);
+            }
+        }
+        private void AlterarFoneEmpresa()
+        {
+            try
+            {
+                banco.Conectar();
+                string alterar = "UPDATE `foneempresa` SET `numeroEmpresa`=@numeroFone,`operFoneEmpresa`=@operFone,`descFoneEmpresa`=@descFone WHERE `idFoneEmpresa`=@codigo;";
+                MySqlCommand cmd = new MySqlCommand(alterar, banco.conexao);
+                cmd.Parameters.AddWithValue("@numeroFone", variaveis.numeroFoneEmpresa);
+                cmd.Parameters.AddWithValue("@operFone", variaveis.operadoraEmpresa);
+                cmd.Parameters.AddWithValue("@descFone", variaveis.descricaoEmpresa);
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codFoneEmpresa);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("TELEFONE DA EMPRESA ALTERADO COM SUCESSO !", "ALTERAR");
+                banco.Desconectar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao alterar o Telefone \n\n" + ex);
+            }
+        }
+
+        private void CarregarTelefones()
+        {
+            try
+            {
+                banco.Conectar();
+                string selecionar = "SELECT * FROM foneempresa WHERE `idEmpresa`=@codigo;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexao);
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codEmpresa);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgvFoneEmpresa.DataSource = dt;
+                dgvFoneEmpresa.Columns[0].Visible = false;
+                dgvFoneEmpresa.Columns[1].HeaderText = "NÚMERO";
+                dgvFoneEmpresa.Columns[2].HeaderText = "OPERADORA";
+                dgvFoneEmpresa.Columns[3].HeaderText = "DESCRIÇÃO";
+                dgvFoneEmpresa.Columns[4].Visible = false;
+
+                dgvFoneEmpresa.ClearSelection();
+                banco.Desconectar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar telefones \n\n" + ex);
+            }
+        }
+
+        private void CarregarFoneEmpresa()
+        {
+            try
+            {
+                banco.Conectar();
+                string selecionar = "SELECT * FROM `foneempre` WHERE `idFoneEmpresa`=@codigo;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexao);
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codFoneEmpresa);
+                MySqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    variaveis.codFoneEmpresa = dr.GetInt32(0);
+                    variaveis.numeroFoneEmpresa = dr.GetString(1);
+                    variaveis.operadoraEmpresa = dr.GetString(2);
+                    variaveis.descricaoEmpresa = dr.GetString(3);
+                    variaveis.codEmpresa = dr.GetInt32(4);
+                    txtCodigo.Text = variaveis.codFoneEmpresa.ToString();
+                    mkdFone.Text = variaveis.numeroFoneEmpresa;
+                    cmbOperadora.Text = variaveis.operadoraEmpresa;
+                    txtDescricao.Text = variaveis.descricaoEmpresa;
+                }
+                banco.Desconectar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar dados do Telefone \n\n" + ex);
+            }
+        }
         private void frmCadEmpresa_Load(object sender, EventArgs e)
         {
             pnlEmpresa.Location = new Point(this.Width / 2 - pnlEmpresa.Width / 2, this.Height / 2 - pnlEmpresa.Height / 2);
@@ -172,16 +289,18 @@ namespace kibelezaTI16Fernanda
                 MessageBox.Show("Favor selecionar o horário");
                 cmbCargaHoraria.Focus();
             }
-            else 
+            else
             {
                 variaveis.nomeEmpresa = txtNomeFantasia.Text;
                 variaveis.cnpjCpfEmpresa = mkdCnpjCpf.Text;
                 variaveis.razaoSocialEmpresa = txtRazaoSocial.Text;
                 variaveis.emailEmpresa = txtEmail.Text;
                 variaveis.statusEmpresa = cmbStatus.Text;
+
                 if (variaveis.funcao == "CADASTRAR")
                 {
                     InserirEmpresa();
+                    CarregarUltimaEmpresa();
                 }
                 else if (variaveis.funcao == "ALTERAR")
                 {
@@ -190,6 +309,130 @@ namespace kibelezaTI16Fernanda
                 pnlEmpresa.Enabled = true;
                 btnSalvar.Enabled = true;
                 btnLimpar.Enabled = true;
+            }
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            variaveis.funcao = "CADASTRAR FONE";
+            pnlFone.Visible = true;
+            pnlFone.Location = new Point(this.Width / 2 - pnlFone.Width / 2, this.Height / 2 - pnlFone.Height / 2);
+            pnlEmpresa.Enabled = false;
+            mkdFone.Focus();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            variaveis.funcao = "ALTERAR FONE";
+            pnlFone.Visible = true;
+
+            CarregarFoneEmpresa();
+
+            pnlFone.Visible = true;
+            pnlFone.Location = new Point(this.Width / 2 - pnlFone.Width / 2, this.Height / 2 - pnlFone.Height / 2);
+            pnlEmpresa.Enabled = false;
+            mkdFone.Focus();
+        }
+
+        private void mkdFone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                cmbOperadora.Enabled = true;
+                cmbOperadora.Focus();
+            }
+        }
+
+        private void cmbOperadora_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                txtDescricao.Enabled = true;
+                txtDescricao.Focus();
+            }
+        }
+
+        private void txtDescricao_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnSalvarFone.Enabled = true;
+                btnSalvarFone.Focus();
+            }
+        }
+
+        private void btnSalvarFone_Click(object sender, EventArgs e)
+        {
+            if (mkdFone.MaskCompleted == false)
+            {
+                MessageBox.Show("Preenche o telefone");
+                mkdFone.Focus();
+            }
+            else if (cmbOperadora.Text == "")
+            {
+                MessageBox.Show("Preencher a operadora");
+                cmbOperadora.Focus();
+            }
+            else if (txtDescricao.Text == "")
+            {
+                MessageBox.Show("Preencher a descrição");
+                txtDescricao.Focus();
+            }
+            else
+            {
+                variaveis.numeroFoneEmpresa = mkdFone.Text;
+                variaveis.operadoraEmpresa = cmbOperadora.Text;
+                variaveis.descricaoEmpresa = txtDescricao.Text;
+                 if (variaveis.funcao == "CADASTRAR FONE")
+                { 
+                InserirFoneEmpresa();
+                }
+                 else if (variaveis.funcao == "ALTERAR FONE")
+                {
+                    AlterarFoneEmpresa();
+                }
+            }
+            btnLimparFone.PerformClick();
+        }
+
+        private void btnLimparFone_Click(object sender, EventArgs e)
+        {
+            mkdFone.Text = String.Empty;
+            cmbOperadora.Text = String.Empty;
+            txtDescricao.Text = String.Empty;
+            cmbOperadora.Enabled = false;
+            txtDescricao.Enabled = false;
+            btnSalvarFone.Enabled = false;
+            mkdFone.Focus();
+        }
+
+        private void btnFecharFone_Click_1(object sender, EventArgs e)
+        {
+            pnlEmpresa.Enabled = true;
+            CarregarTelefones();
+            pnlFone.Visible = false;
+            pnlFone.Location = new Point(this.Width / 2 - pnlFone.Width / 2, this.Height / 2 - pnlFone.Height / 2);
+        }
+
+        private void cmbDocumento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbDocumento.Text == "CNPJ")
+            {
+                mkdCnpjCpf.Mask = "00,000,000/0000-00";
+            }
+            else if (cmbDocumento.Text == "CPF")
+            {
+                mkdCnpjCpf.Mask = "000,000,000-00";
+            }
+        }
+
+        private void dgvFoneEmpresa_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            variaveis.linhaSelecionada = -1;
+            variaveis.linhaSelecionada = int.Parse(e.RowIndex.ToString());
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                variaveis.codFoneEmpresa = Convert.ToInt32(dgvFoneEmpresa[0, variaveis.linhaSelecionada].Value);
             }
         }
     }
