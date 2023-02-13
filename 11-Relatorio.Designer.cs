@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlRelatorio = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAtualizar = new System.Windows.Forms.Button();
             this.pnlFiltro = new System.Windows.Forms.Panel();
             this.radTelefone = new System.Windows.Forms.RadioButton();
             this.radInativo = new System.Windows.Forms.RadioButton();
@@ -57,7 +57,7 @@
             // 
             this.pnlRelatorio.BackgroundImage = global::kibelezaTI16Fernanda.Properties.Resources.relatorio;
             this.pnlRelatorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlRelatorio.Controls.Add(this.button1);
+            this.pnlRelatorio.Controls.Add(this.btnAtualizar);
             this.pnlRelatorio.Controls.Add(this.pnlFiltro);
             this.pnlRelatorio.Controls.Add(this.dgvRelatorio);
             this.pnlRelatorio.Controls.Add(this.btnSalvar);
@@ -68,19 +68,19 @@
             this.pnlRelatorio.Size = new System.Drawing.Size(1200, 600);
             this.pnlRelatorio.TabIndex = 1;
             // 
-            // button1
+            // btnAtualizar
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::kibelezaTI16Fernanda.Properties.Resources.atualizar;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(1091, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(45, 49);
-            this.button1.TabIndex = 6;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAtualizar.BackColor = System.Drawing.Color.Transparent;
+            this.btnAtualizar.BackgroundImage = global::kibelezaTI16Fernanda.Properties.Resources.atualizar;
+            this.btnAtualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAtualizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAtualizar.FlatAppearance.BorderSize = 0;
+            this.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizar.Location = new System.Drawing.Point(1091, 14);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(45, 49);
+            this.btnAtualizar.TabIndex = 6;
+            this.btnAtualizar.UseVisualStyleBackColor = false;
             // 
             // pnlFiltro
             // 
@@ -314,7 +314,7 @@
         private System.Windows.Forms.Label lblTabela;
         private System.Windows.Forms.Panel pnlFiltro;
         private System.Windows.Forms.Label lblFiltro;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RadioButton radCliente;
