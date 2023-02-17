@@ -68,6 +68,8 @@
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.Size = new System.Drawing.Size(1002, 477);
             this.dgvCliente.TabIndex = 5;
+            this.dgvCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellClick);
+            this.dgvCliente.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCliente_ColumnHeaderMouseClick);
             // 
             // btnExcluir
             // 
@@ -82,6 +84,7 @@
             this.btnExcluir.TabIndex = 4;
             this.btnExcluir.Text = "EXCLUIR";
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -96,6 +99,7 @@
             this.btnAlterar.TabIndex = 3;
             this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnCadastrar
             // 
@@ -150,6 +154,7 @@
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(203, 31);
             this.cmbStatus.TabIndex = 2;
+            this.cmbStatus.SelectedIndexChanged += new System.EventHandler(this.cmbStatus_SelectedIndexChanged);
             // 
             // txtCliente
             // 
@@ -159,6 +164,7 @@
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(529, 31);
             this.txtCliente.TabIndex = 2;
+            this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
             // 
             // lblStatus
             // 
@@ -198,6 +204,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "05-Cliente";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmCliente_Load);
             this.pnlCliente.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.pnlBusca.ResumeLayout(false);

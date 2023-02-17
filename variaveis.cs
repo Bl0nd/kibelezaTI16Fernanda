@@ -17,7 +17,8 @@ namespace kibelezaTI16Fernanda
 
         //Cliente
         public static int codCliente;
-        public static string nomeCliente;
+        public static string nomeCliente, emailCliente, senhaCliente, statusCliente, fotoCliente, atFotoCliente, caminhoFotoCliente;
+        public static DateTime dataCadastroCliente;
 
         //Empresa
         public static int codEmpresa;
@@ -27,5 +28,14 @@ namespace kibelezaTI16Fernanda
         //Fone Empresa
         public static int codFoneEmpresa;
         public static string numeroFoneEmpresa, operadoraEmpresa, descricaoEmpresa;
+
+        //Cliente
+        public static int codFoneCliente;
+        public static string numeroFoneCliente, operadoraCliente, descricaoCliente;
+
+        //FOTOS FTP
+        public static string enderecoServidorFtp = "ftp://127.0.0.1/admin/";
+        public static string usuarioFtp ="ti16";
+        public static string senhaFtp = "1234";
     }
 }

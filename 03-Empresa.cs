@@ -109,6 +109,29 @@ namespace kibelezaTI16Fernanda
                 MessageBox.Show("Erro ao selecionar a lista de Empresa Inativa. \n \n" + ex);
             }
         }
+
+        private void ExcluirEmpresa()
+        {
+            try
+            {
+                banco.Conectar();
+                string excluir = "DELETE FROM `empresa` WHERE `idEmresa`=@codigo";
+                MySqlCommand cmd = new MySqlCommand(excluir, banco.conexao);
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codEmpresa);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgvEmpresa.DataSource = dt;
+                dgvEmpresa.ClearSelection();
+
+                banco.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao excluir a Empresa \n\n" + erro.Message);
+            }
+        }
         private void btnFechar_Click(object sender, EventArgs e)
         {
             new frmMenuPrincipal().Show();
@@ -193,6 +216,22 @@ namespace kibelezaTI16Fernanda
             variaveis.funcao = "CADASTRAR";
             new frmCadEmpresa().Show();
             Hide();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                var resultado = MessageBox.Show("Deseja realmente excluir ? ", "EXCLUIR", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+                    ExcluirEmpresa();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Para excluir selecione uma linha");
+            }
         }
     }
 }
