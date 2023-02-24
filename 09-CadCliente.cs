@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,14 +34,14 @@ namespace kibelezaTI16Fernanda
                 string selecionar = "SELECT * FROM `cliente` WHERE `idCliente`=@codigo;";
                 MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexao);
                 cmd.Parameters.AddWithValue("@codigo", variaveis.codCliente);
-                MySqlDataAdapter dr = cmd.ExecuteReader();
+                MySqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
                     variaveis.nomeCliente = dr.GetString(1);
                     variaveis.emailCliente = dr.GetString(2);
                     variaveis.senhaCliente = dr.GetString(3);
                     variaveis.statusCliente = dr.GetString(4);
-                    variaveis.dataCadastroCliente = dr.GetString(5);
+                    variaveis.dataCadastroCliente = dr.GetDateTime(5);
                     variaveis.fotoCliente = dr.GetString(6);
                     variaveis.fotoCliente = variaveis.fotoCliente.Remove(0, 8);
 
@@ -70,6 +72,39 @@ namespace kibelezaTI16Fernanda
                 cmbStatus.Enabled = true;
                 pctFoto.Enabled = true;
             }
+        }
+
+        //VALIDAÇÃO FTP
+        private bool ValidarFTP()
+        {
+            if(string.IsNullOrEmpty(variaveis.enderecoServidorFtp) || string.IsNullOrEmpty(variaveis.usuarioFtp) || string.IsNullOrEmpty(variaveis.senhaFtp))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        //CONVERTER A IMAGEM EM BYTE
+        public byte[] GetImgToByte(string caminhoArquivoFtp)
+        {
+            WebClient ftpCliente = new WebClient();
+            ftpCliente.Credentials = new NetworkCredential(variaveis.usuarioFtp, variaveis.senhaFtp);
+            byte[] imageToByte = ftpCliente.DownloadData(caminhoArquivoFtp);
+            return imageToByte;
+        }
+
+        //CONVERTER A IMAGEM DE BYTE PARA IMG
+        public static Bitmap ByteToImage(byte[] blob)
+        {
+            MemoryStream mStream = new MemoryStream();
+            byte[] pData = blob;
+            mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+            Bitmap bm = new Bitmap(mStream, false);
+            mStream.Dispose();
+            return bm;
         }
     }
 }
