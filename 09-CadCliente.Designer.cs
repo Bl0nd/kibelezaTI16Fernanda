@@ -52,7 +52,7 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblNomeCliente = new System.Windows.Forms.Label();
             this.pnlCliente = new System.Windows.Forms.Panel();
-            this.lblCliente = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
             this.pnlFone = new System.Windows.Forms.Panel();
             this.pnlCodigo = new System.Windows.Forms.Panel();
@@ -191,6 +191,7 @@
             this.btnSalvar.TabIndex = 6;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnLimpar
             // 
@@ -375,24 +376,24 @@
             // pnlCliente
             // 
             this.pnlCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
-            this.pnlCliente.Controls.Add(this.lblCliente);
+            this.pnlCliente.Controls.Add(this.lblTitulo);
             this.pnlCliente.Controls.Add(this.btnFechar);
             this.pnlCliente.Location = new System.Drawing.Point(186, 0);
             this.pnlCliente.Name = "pnlCliente";
             this.pnlCliente.Size = new System.Drawing.Size(1014, 54);
             this.pnlCliente.TabIndex = 0;
             // 
-            // lblCliente
+            // lblTitulo
             // 
-            this.lblCliente.AutoSize = true;
-            this.lblCliente.BackColor = System.Drawing.Color.Transparent;
-            this.lblCliente.Font = new System.Drawing.Font("Britannic Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCliente.ForeColor = System.Drawing.Color.White;
-            this.lblCliente.Location = new System.Drawing.Point(328, 3);
-            this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(336, 38);
-            this.lblCliente.TabIndex = 0;
-            this.lblCliente.Text = "CADASTRAR CLIENTE";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitulo.Font = new System.Drawing.Font("Britannic Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.White;
+            this.lblTitulo.Location = new System.Drawing.Point(328, 3);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(336, 38);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "CADASTRAR CLIENTE";
             // 
             // btnFechar
             // 
@@ -641,7 +642,7 @@
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Label lblNomeCliente;
         private System.Windows.Forms.Panel pnlCliente;
-        private System.Windows.Forms.Label lblCliente;
+        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Label lblFoto;
         private System.Windows.Forms.PictureBox pctFoto;

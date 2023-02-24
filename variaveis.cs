@@ -31,7 +31,7 @@ namespace kibelezaTI16Fernanda
 
         //Cliente
         public static int codFoneCliente;
-        public static string numeroFoneCliente, operadoraCliente, descricaoCliente;
+        public static string numeroFoneCliente, operadoraCliente, operFoneCliente, descricaoCliente;
 
         //FOTOS FTP
         public static string enderecoServidorFtp = "ftp://127.0.0.1/admin/";
