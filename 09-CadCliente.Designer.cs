@@ -119,6 +119,7 @@
             this.btnFoto.TabIndex = 23;
             this.btnFoto.Text = "+";
             this.btnFoto.UseVisualStyleBackColor = false;
+            this.btnFoto.Click += new System.EventHandler(this.btnFoto_Click);
             // 
             // pctFoto
             // 
@@ -144,7 +145,6 @@
             // 
             // mkdDataCad
             // 
-            this.mkdDataCad.Enabled = false;
             this.mkdDataCad.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mkdDataCad.Location = new System.Drawing.Point(445, 214);
             this.mkdDataCad.Mask = "         00/00/0000";
@@ -206,17 +206,21 @@
             this.btnLimpar.TabIndex = 7;
             this.btnLimpar.Text = "LIMPAR";
             this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // cmbStatus
             // 
             this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbStatus.Enabled = false;
             this.cmbStatus.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "ATIVO",
+            "INATIVO"});
             this.cmbStatus.Location = new System.Drawing.Point(192, 214);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(180, 31);
             this.cmbStatus.TabIndex = 13;
+            this.cmbStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbStatus_KeyPress);
             // 
             // pnlFoneCliente
             // 
@@ -240,6 +244,8 @@
             this.dgvFoneCliente.Name = "dgvFoneCliente";
             this.dgvFoneCliente.Size = new System.Drawing.Size(570, 288);
             this.dgvFoneCliente.TabIndex = 5;
+            this.dgvFoneCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFoneCliente_CellClick);
+            this.dgvFoneCliente.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvFoneCliente_ColumnHeaderMouseClick);
             // 
             // btnCadastrar
             // 
@@ -254,6 +260,7 @@
             this.btnCadastrar.TabIndex = 2;
             this.btnCadastrar.Text = "CADASTRAR";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnAlterar
             // 
@@ -268,6 +275,7 @@
             this.btnAlterar.TabIndex = 3;
             this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnExcluir
             // 
@@ -282,28 +290,29 @@
             this.btnExcluir.TabIndex = 4;
             this.btnExcluir.Text = "EXCLUIR";
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // txtEmail
             // 
-            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.txtEmail.Enabled = false;
+            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtEmail.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
             this.txtEmail.Location = new System.Drawing.Point(192, 150);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(747, 31);
             this.txtEmail.TabIndex = 11;
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 
             // txtSenha
             // 
             this.txtSenha.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtSenha.Enabled = false;
             this.txtSenha.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
             this.txtSenha.Location = new System.Drawing.Point(945, 150);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(240, 31);
             this.txtSenha.TabIndex = 10;
+            this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha_KeyPress);
             // 
             // txtNomeCliente
             // 
@@ -314,6 +323,7 @@
             this.txtNomeCliente.Name = "txtNomeCliente";
             this.txtNomeCliente.Size = new System.Drawing.Size(867, 31);
             this.txtNomeCliente.TabIndex = 8;
+            this.txtNomeCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomeCliente_KeyPress);
             // 
             // lblSenha
             // 
@@ -466,6 +476,7 @@
             this.btnFecharFone.Size = new System.Drawing.Size(50, 50);
             this.btnFecharFone.TabIndex = 2;
             this.btnFecharFone.UseVisualStyleBackColor = false;
+            this.btnFecharFone.Click += new System.EventHandler(this.btnFecharFone_Click);
             // 
             // txtFoneCodigo
             // 
@@ -500,6 +511,7 @@
             this.mkdFone.Name = "mkdFone";
             this.mkdFone.Size = new System.Drawing.Size(263, 31);
             this.mkdFone.TabIndex = 21;
+            this.mkdFone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mkdFone_KeyPress);
             // 
             // lblDescricao
             // 
@@ -551,6 +563,7 @@
             this.cmbOperadora.Name = "cmbOperadora";
             this.cmbOperadora.Size = new System.Drawing.Size(228, 31);
             this.cmbOperadora.TabIndex = 21;
+            this.cmbOperadora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbOperadora_KeyPress);
             // 
             // btnLimparFone
             // 
@@ -565,6 +578,7 @@
             this.btnLimparFone.TabIndex = 21;
             this.btnLimparFone.Text = "LIMPAR";
             this.btnLimparFone.UseVisualStyleBackColor = false;
+            this.btnLimparFone.Click += new System.EventHandler(this.btnLimparFone_Click);
             // 
             // btnSalvarFone
             // 
@@ -579,6 +593,7 @@
             this.btnSalvarFone.TabIndex = 21;
             this.btnSalvarFone.Text = "SALVAR";
             this.btnSalvarFone.UseVisualStyleBackColor = false;
+            this.btnSalvarFone.Click += new System.EventHandler(this.btnSalvarFone_Click);
             // 
             // txtDescricao
             // 
@@ -589,6 +604,7 @@
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(228, 31);
             this.txtDescricao.TabIndex = 21;
+            this.txtDescricao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescricao_KeyPress);
             // 
             // frmCadCliente
             // 
@@ -602,7 +618,9 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCadCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "09-CadCliente";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmCadCliente_Load);
             this.pnlCadCliente.ResumeLayout(false);
             this.pnlCadCliente.PerformLayout();

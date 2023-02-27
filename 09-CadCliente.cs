@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using crypto;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,7 +8,9 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Security;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,7 +25,7 @@ namespace kibelezaTI16Fernanda
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
-            new frmCadCliente().Show();
+            new frmCliente().Show();
             Close();
         }
 
@@ -390,8 +393,243 @@ namespace kibelezaTI16Fernanda
                     }
                 }
                 pnlFoneCliente.Enabled = true;
+                btnSalvar.Enabled = false;
+                btnLimpar.Enabled = false;
+            }
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            variaveis.funcao = "CADASTRAR FONE";
+            pnlFone.Visible = true;
+            pnlFone.Location = new Point(this.Width / 2 - pnlFone.Width / 2, this.Height / 2 - pnlFone.Height / 2);
+            pnlCliente.Enabled = false;
+            mkdFone.Focus();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            variaveis.funcao = "ALTERAR FONE";
+            pnlFone.Visible = true;
+
+            CarregarFoneCliente();
+
+            pnlFone.Location = new Point(this.Width / 2 - pnlFone.Width / 2, this.Height / 2 - pnlFone.Height / 2);
+            pnlCliente.Enabled = false;
+            mkdFone.Focus();
+        }
+
+        private void btnFecharFone_Click(object sender, EventArgs e)
+        {
+            pnlCliente.Enabled = true;
+            CarregarTelefones();
+            pnlFone.Visible = false;
+            pnlFone.Location = new Point(this.Width / 2 - pnlFone.Width / 2, this.Height / 2 - pnlFone.Height / 2);
+        }
+
+        private void txtNomeCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                txtEmail.Enabled = true;
+                txtEmail.Focus();
+            }
+        }
+
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                txtSenha.Enabled = true;
+                txtSenha.Focus();
+            }
+        }
+
+        private void txtSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                cmbStatus.Enabled = true;
+                cmbStatus.Focus();
+            }
+        }
+
+        private void cmbStatus_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnFoto.Enabled = true;
+                btnFoto.Focus();
+            }
+        }
+
+        private void btnFoto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog ofdFoto = new OpenFileDialog();
+                ofdFoto.Multiselect = false;
+                ofdFoto.FileName = "";
+                ofdFoto.InitialDirectory = @"C:";
+                ofdFoto.Title = "SELECIONE UMA FOTO";
+                ofdFoto.Filter = "JPG ou PNG (*.jpg ou *.png)|*.jpg;*.png";
+                ofdFoto.CheckFileExists = true; //verificar se o caminho existe
+                ofdFoto.CheckPathExists = true; // verificar se o arquivo existe
+                ofdFoto.RestoreDirectory = true; //verificar ao diretório inicial
+
+                DialogResult dr = ofdFoto.ShowDialog();
+                pctFoto.Image = Image.FromFile(ofdFoto.FileName);
+
+                if(ofdFoto.FileName.Substring(ofdFoto.FileName.Length - 8) == "user.png")
+                {
+                    variaveis.fotoCliente = "cliente/user.png";
+                }
+                else
+                {
+                    variaveis.fotoCliente = "cliente/" + Regex.Replace(txtNomeCliente.Text, @"\s", "").ToLower() + ".png"; //a variavel recebe o nome da foto com o nome da pasta "cliente/nome_foto.png
+                }
+                if (dr == DialogResult.OK)
+                {
+                    try
+                    {
+                        variaveis.atFotoCliente = "S";
+                        variaveis.caminhoFotoCliente = ofdFoto.FileName;
+                    }
+                    catch (SecurityException ex)
+                    {
+                        MessageBox.Show("Erro de segurança - Fale com o Admin \n Mensagem: " + ex + " \n Detalhe: \n" + ex.StackTrace);                            
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Você não tem permissão \n Detalhe: " + ex);
+                    }
+                }
                 btnSalvar.Enabled = true;
-                btnLimpar.Enabled = true;
+                btnSalvar.Focus();
+            }
+            catch
+            {
+                btnSalvar.Enabled = true;
+                btnSalvar.Focus();
+            }
+        }
+
+        private void mkdFone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                cmbOperadora.Enabled = true;
+                cmbOperadora.Focus();
+            }
+
+        }
+       private void cmbOperadora_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                txtDescricao.Enabled = true;
+                txtDescricao.Focus();
+            }
+        }
+
+        private void txtDescricao_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                btnSalvarFone.Enabled = true;
+                btnSalvarFone.Focus();
+            }
+        }
+
+        private void btnSalvarFone_Click(object sender, EventArgs e)
+        {
+            if(mkdFone.MaskCompleted == false)
+            {
+                MessageBox.Show("Preencher o telefone");
+                mkdFone.Focus();
+            }
+            else if (cmbOperadora.Text == "")
+            {
+                MessageBox.Show("Preencher a operadora");
+                cmbOperadora.Focus();
+            }
+            else if (txtDescricao.Text == "")
+            {
+                MessageBox.Show("Preencher a descrição");
+                txtDescricao.Focus();
+            }
+            else
+            {
+                variaveis.numeroFoneCliente = mkdFone.Text;
+                variaveis.operadoraCliente = cmbOperadora.Text;
+                variaveis.descricaoCliente = txtDescricao.Text;
+
+                if(variaveis.funcao == "CADASTRAR FONE")
+                {
+                    InserirFoneCliente();
+                }
+                else if (variaveis.funcao ==  "ALTERAR FONE")
+                {
+                    AlterarFoneCliente();
+                }
+            }
+            btnLimparFone.PerformClick();
+        }
+
+        private void dgvFoneCliente_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            variaveis.linhaSelecionada = -1;
+            variaveis.linhaSelecionada = int.Parse(e.RowIndex.ToString());
+            if(variaveis.linhaSelecionada >=0)
+            {
+                variaveis.codFoneCliente = Convert.ToInt32(dgvFoneCliente[0, variaveis.linhaSelecionada].Value);
+                txtCodigo.Text = variaveis.codFoneCliente.ToString();
+            }
+        }
+
+        private void dgvFoneCliente_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dgvFoneCliente.Sort(dgvFoneCliente.Columns[1], ListSortDirection.Ascending);
+            dgvFoneCliente.ClearSelection();
+        }
+
+        private void btnLimparFone_Click(object sender, EventArgs e)
+        {
+            mkdFone.Text = String.Empty;
+            cmbOperadora.Text = String.Empty;
+            txtDescricao.Text = String.Empty;
+            cmbOperadora.Enabled = false;
+            txtDescricao.Enabled = false;
+            btnSalvarFone.Enabled = false;
+            mkdFone.Focus();
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtNomeCliente.Clear();
+            txtEmail.Clear();
+            txtSenha.Clear();
+            cmbStatus.SelectedIndex = -1;
+            mkdDataCad.Clear();
+            pctFoto.Image = Properties.Resources.semimagem;
+
+            txtNomeCliente.Focus();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if(variaveis.linhaSelecionada >=0)
+            {
+                var resultado = MessageBox.Show("Deseja realmente excluir ?", "EXCLUIR" , MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+                    ExcluirFoneCliente();
+                    CarregarTelefones();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Para excluir selecione uma linha");
             }
         }
     }
