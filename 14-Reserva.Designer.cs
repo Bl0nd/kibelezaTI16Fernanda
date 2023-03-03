@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.pnlReserva = new System.Windows.Forms.Panel();
-            this.meuCalendario1 = new kibelezaTI16Fernanda.MeuCalendario();
             this.cmbServico = new System.Windows.Forms.ComboBox();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.lblDataReserva = new System.Windows.Forms.Label();
@@ -48,8 +47,9 @@
             this.lblObservacao = new System.Windows.Forms.Label();
             this.lblFuncionario = new System.Windows.Forms.Label();
             this.pnlBusca = new System.Windows.Forms.Panel();
-            this.lblReserva = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.calReserva = new kibelezaTI16Fernanda.MeuCalendario();
             this.pnlReserva.SuspendLayout();
             this.pnlBusca.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +59,7 @@
             this.pnlReserva.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlReserva.BackgroundImage = global::kibelezaTI16Fernanda.Properties.Resources.reserva;
             this.pnlReserva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlReserva.Controls.Add(this.meuCalendario1);
+            this.pnlReserva.Controls.Add(this.calReserva);
             this.pnlReserva.Controls.Add(this.cmbServico);
             this.pnlReserva.Controls.Add(this.cmbStatus);
             this.pnlReserva.Controls.Add(this.lblDataReserva);
@@ -82,18 +82,6 @@
             this.pnlReserva.Name = "pnlReserva";
             this.pnlReserva.Size = new System.Drawing.Size(1200, 600);
             this.pnlReserva.TabIndex = 5;
-            this.pnlReserva.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlReserva_Paint);
-            // 
-            // meuCalendario1
-            // 
-            this.meuCalendario1.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.meuCalendario1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
-            this.meuCalendario1.Location = new System.Drawing.Point(688, 171);
-            this.meuCalendario1.Name = "meuCalendario1";
-            this.meuCalendario1.TabIndex = 22;
-            this.meuCalendario1.TitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
-            this.meuCalendario1.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(206)))), ((int)(((byte)(218)))));
-            this.meuCalendario1.TrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(206)))), ((int)(((byte)(218)))));
             // 
             // cmbServico
             // 
@@ -108,6 +96,7 @@
             this.cmbServico.Name = "cmbServico";
             this.cmbServico.Size = new System.Drawing.Size(475, 31);
             this.cmbServico.TabIndex = 20;
+            this.cmbServico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbServico_KeyPress);
             // 
             // cmbStatus
             // 
@@ -124,6 +113,7 @@
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(475, 31);
             this.cmbStatus.TabIndex = 19;
+            this.cmbStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbStatus_KeyPress);
             // 
             // lblDataReserva
             // 
@@ -155,16 +145,11 @@
             this.cmbHorario.Enabled = false;
             this.cmbHorario.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbHorario.FormattingEnabled = true;
-            this.cmbHorario.Items.AddRange(new object[] {
-            "04:00",
-            "06:00",
-            "08:00",
-            "10:00",
-            "12:00"});
             this.cmbHorario.Location = new System.Drawing.Point(1022, 171);
             this.cmbHorario.Name = "cmbHorario";
             this.cmbHorario.Size = new System.Drawing.Size(160, 31);
             this.cmbHorario.TabIndex = 16;
+            this.cmbHorario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbHorario_KeyPress);
             // 
             // lblStatus
             // 
@@ -192,6 +177,7 @@
             this.btnSalvar.TabIndex = 6;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnLimpar
             // 
@@ -206,6 +192,7 @@
             this.btnLimpar.TabIndex = 7;
             this.btnLimpar.Text = "LIMPAR";
             this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // cmbCliente
             // 
@@ -220,6 +207,7 @@
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(475, 31);
             this.cmbCliente.TabIndex = 13;
+            this.cmbCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbCliente_KeyPress);
             // 
             // txtObservacao
             // 
@@ -230,6 +218,7 @@
             this.txtObservacao.Name = "txtObservacao";
             this.txtObservacao.Size = new System.Drawing.Size(867, 31);
             this.txtObservacao.TabIndex = 8;
+            this.txtObservacao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtObservacao_KeyPress);
             // 
             // cmbFuncionario
             // 
@@ -244,6 +233,8 @@
             this.cmbFuncionario.Name = "cmbFuncionario";
             this.cmbFuncionario.Size = new System.Drawing.Size(475, 31);
             this.cmbFuncionario.TabIndex = 2;
+            this.cmbFuncionario.SelectionChangeCommitted += new System.EventHandler(this.cmbFuncionario_SelectionChangeCommitted);
+            this.cmbFuncionario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbFuncionario_KeyPress);
             // 
             // lblCliente
             // 
@@ -318,24 +309,24 @@
             // pnlBusca
             // 
             this.pnlBusca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
-            this.pnlBusca.Controls.Add(this.lblReserva);
+            this.pnlBusca.Controls.Add(this.lblTitulo);
             this.pnlBusca.Controls.Add(this.btnFechar);
             this.pnlBusca.Location = new System.Drawing.Point(186, 0);
             this.pnlBusca.Name = "pnlBusca";
             this.pnlBusca.Size = new System.Drawing.Size(1014, 54);
             this.pnlBusca.TabIndex = 0;
             // 
-            // lblReserva
+            // lblTitulo
             // 
-            this.lblReserva.AutoSize = true;
-            this.lblReserva.BackColor = System.Drawing.Color.Transparent;
-            this.lblReserva.Font = new System.Drawing.Font("Britannic Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReserva.ForeColor = System.Drawing.Color.White;
-            this.lblReserva.Location = new System.Drawing.Point(370, 3);
-            this.lblReserva.Name = "lblReserva";
-            this.lblReserva.Size = new System.Drawing.Size(156, 38);
-            this.lblReserva.TabIndex = 0;
-            this.lblReserva.Text = "RESERVA";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitulo.Font = new System.Drawing.Font("Britannic Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.White;
+            this.lblTitulo.Location = new System.Drawing.Point(370, 3);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(156, 38);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "RESERVA";
             // 
             // btnFechar
             // 
@@ -350,6 +341,19 @@
             this.btnFechar.Size = new System.Drawing.Size(50, 50);
             this.btnFechar.TabIndex = 1;
             this.btnFechar.UseVisualStyleBackColor = false;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // calReserva
+            // 
+            this.calReserva.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calReserva.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.calReserva.Location = new System.Drawing.Point(688, 171);
+            this.calReserva.Name = "calReserva";
+            this.calReserva.TabIndex = 22;
+            this.calReserva.TitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.calReserva.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(206)))), ((int)(((byte)(218)))));
+            this.calReserva.TrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(206)))), ((int)(((byte)(218)))));
+            this.calReserva.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.calReserva_DateSelected);
             // 
             // frmReserva
             // 
@@ -364,6 +368,7 @@
             this.Name = "frmReserva";
             this.Text = "14-Reserva";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmReserva_Load);
             this.pnlReserva.ResumeLayout(false);
             this.pnlReserva.PerformLayout();
             this.pnlBusca.ResumeLayout(false);
@@ -391,10 +396,10 @@
         private System.Windows.Forms.Label lblObservacao;
         private System.Windows.Forms.Label lblFuncionario;
         private System.Windows.Forms.Panel pnlBusca;
-        private System.Windows.Forms.Label lblReserva;
+        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.ComboBox cmbServico;
         private System.Windows.Forms.ComboBox cmbStatus;
-        private MeuCalendario meuCalendario1;
+        private MeuCalendario calReserva;
     }
 }
