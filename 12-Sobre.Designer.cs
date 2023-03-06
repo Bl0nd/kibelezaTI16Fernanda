@@ -85,6 +85,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSobre";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "12-Sobre";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlRelatorio.ResumeLayout(false);

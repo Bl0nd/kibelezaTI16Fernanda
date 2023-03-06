@@ -22,7 +22,8 @@ namespace kibelezaTI16Fernanda
 
         //Funcionario
         public static int codFuncionario;
-        public static string nomeFuncionario;
+        public static string nomeFuncionario, emailFuncionario, senhaFuncionario, nivelFuncionario, statusFuncionario, horarioTrabalhoFuncionario;
+        public static DateTime dataCadFuncionario;
 
         //Servico
         public static int codServico;

@@ -194,7 +194,9 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmServico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "06-Servico";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlServico.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvServico)).EndInit();
             this.pnlBusca.ResumeLayout(false);

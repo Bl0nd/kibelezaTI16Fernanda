@@ -119,6 +119,8 @@
             this.dgvReserva.Name = "dgvReserva";
             this.dgvReserva.Size = new System.Drawing.Size(779, 299);
             this.dgvReserva.TabIndex = 23;
+            this.dgvReserva.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReserva_CellClick);
+            this.dgvReserva.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvReserva_ColumnHeaderMouseClick);
             // 
             // btnAgendar
             // 
@@ -237,6 +239,7 @@
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(162, 31);
             this.cmbStatus.TabIndex = 15;
+            this.cmbStatus.SelectedIndexChanged += new System.EventHandler(this.cmbStatus_SelectedIndexChanged);
             // 
             // lblStatus
             // 
@@ -258,6 +261,7 @@
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(387, 31);
             this.txtCliente.TabIndex = 13;
+            this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
             // 
             // lblCliente
             // 

@@ -288,6 +288,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRelatorio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "11-Relatorio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlRelatorio.ResumeLayout(false);

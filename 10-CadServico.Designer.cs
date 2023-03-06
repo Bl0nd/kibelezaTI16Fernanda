@@ -518,6 +518,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCadServico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "10-CadServico";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlCadServico.ResumeLayout(false);
