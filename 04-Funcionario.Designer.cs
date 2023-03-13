@@ -68,6 +68,7 @@
             this.dgvFuncionario.Name = "dgvFuncionario";
             this.dgvFuncionario.Size = new System.Drawing.Size(1002, 477);
             this.dgvFuncionario.TabIndex = 5;
+            this.dgvFuncionario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionario_CellClick);
             this.dgvFuncionario.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvFuncionario_ColumnHeaderMouseClick);
             // 
             // btnExcluir

@@ -111,7 +111,7 @@ namespace kibelezaTI16Fernanda
             try
             {
                 banco.Conectar();
-                string selecionar = "SELECT * FROM `funcionarioecompleto`";
+                string selecionar = "SELECT * FROM `funcionariocompleto`";
                 MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexao);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -205,6 +205,15 @@ namespace kibelezaTI16Fernanda
             catch (Exception erro)
             {
                 MessageBox.Show("Erro ao excluir o Funcionario \n\n" + erro.Message);
+            }
+        }
+
+        private void dgvFuncionario_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            variaveis.linhaSelecionada = int.Parse(e.RowIndex.ToString());
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                variaveis.codFuncionario = Convert.ToInt32(dgvFuncionario[0, variaveis.linhaSelecionada].Value);
             }
         }
     }

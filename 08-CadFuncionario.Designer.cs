@@ -46,7 +46,7 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
-            this.txtFoneFuncionario = new System.Windows.Forms.TextBox();
+            this.txtNomeFuncionario = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();
             this.cmbNivel = new System.Windows.Forms.ComboBox();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -81,7 +81,7 @@
             this.pnlFuncionario.Controls.Add(this.pnlFoneFuncionario);
             this.pnlFuncionario.Controls.Add(this.txtEmail);
             this.pnlFuncionario.Controls.Add(this.txtSenha);
-            this.pnlFuncionario.Controls.Add(this.txtFoneFuncionario);
+            this.pnlFuncionario.Controls.Add(this.txtNomeFuncionario);
             this.pnlFuncionario.Controls.Add(this.lblSenha);
             this.pnlFuncionario.Controls.Add(this.cmbNivel);
             this.pnlFuncionario.Controls.Add(this.lblEmail);
@@ -112,6 +112,10 @@
             this.cmbEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEmpresa.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEmpresa.FormattingEnabled = true;
+            this.cmbEmpresa.Items.AddRange(new object[] {
+            "MATRIZ",
+            "FILIAL 1",
+            "FILIAL 2"});
             this.cmbEmpresa.Location = new System.Drawing.Point(876, 279);
             this.cmbEmpresa.Name = "cmbEmpresa";
             this.cmbEmpresa.Size = new System.Drawing.Size(309, 31);
@@ -157,6 +161,9 @@
             this.cmbCargaHoraria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCargaHoraria.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCargaHoraria.FormattingEnabled = true;
+            this.cmbCargaHoraria.Items.AddRange(new object[] {
+            "06:00",
+            "08:00"});
             this.cmbCargaHoraria.Location = new System.Drawing.Point(1006, 224);
             this.cmbCargaHoraria.Name = "cmbCargaHoraria";
             this.cmbCargaHoraria.Size = new System.Drawing.Size(179, 31);
@@ -177,7 +184,6 @@
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(52)))), ((int)(((byte)(96)))));
-            this.btnSalvar.Enabled = false;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Font = new System.Drawing.Font("Britannic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -188,6 +194,7 @@
             this.btnSalvar.TabIndex = 6;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnLimpar
             // 
@@ -202,16 +209,21 @@
             this.btnLimpar.TabIndex = 7;
             this.btnLimpar.Text = "LIMPAR";
             this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // cmbStatus
             // 
             this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStatus.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "ATIVO",
+            "INATIVO"});
             this.cmbStatus.Location = new System.Drawing.Point(446, 210);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(160, 31);
             this.cmbStatus.TabIndex = 13;
+            this.cmbStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbStatus_KeyPress);
             // 
             // pnlFoneFuncionario
             // 
@@ -277,38 +289,40 @@
             this.btnExcluir.TabIndex = 4;
             this.btnExcluir.Text = "EXCLUIR";
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // txtEmail
             // 
-            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.txtEmail.Enabled = false;
+            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtEmail.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
             this.txtEmail.Location = new System.Drawing.Point(192, 150);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(771, 31);
             this.txtEmail.TabIndex = 11;
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 
             // txtSenha
             // 
             this.txtSenha.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtSenha.Enabled = false;
             this.txtSenha.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
             this.txtSenha.Location = new System.Drawing.Point(969, 150);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(216, 31);
             this.txtSenha.TabIndex = 10;
+            this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha_KeyPress);
             // 
-            // txtFoneFuncionario
+            // txtNomeFuncionario
             // 
-            this.txtFoneFuncionario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtFoneFuncionario.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFoneFuncionario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
-            this.txtFoneFuncionario.Location = new System.Drawing.Point(324, 87);
-            this.txtFoneFuncionario.Name = "txtFoneFuncionario";
-            this.txtFoneFuncionario.Size = new System.Drawing.Size(867, 31);
-            this.txtFoneFuncionario.TabIndex = 8;
+            this.txtNomeFuncionario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNomeFuncionario.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeFuncionario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.txtNomeFuncionario.Location = new System.Drawing.Point(324, 87);
+            this.txtNomeFuncionario.Name = "txtNomeFuncionario";
+            this.txtNomeFuncionario.Size = new System.Drawing.Size(867, 31);
+            this.txtNomeFuncionario.TabIndex = 8;
+            this.txtNomeFuncionario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomeFuncionario_KeyPress);
             // 
             // lblSenha
             // 
@@ -334,6 +348,7 @@
             this.cmbNivel.Name = "cmbNivel";
             this.cmbNivel.Size = new System.Drawing.Size(196, 31);
             this.cmbNivel.TabIndex = 2;
+            this.cmbNivel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbNivel_KeyPress);
             // 
             // lblEmail
             // 
@@ -473,7 +488,7 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtSenha;
-        private System.Windows.Forms.TextBox txtFoneFuncionario;
+        private System.Windows.Forms.TextBox txtNomeFuncionario;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.ComboBox cmbNivel;
         private System.Windows.Forms.Label lblEmail;
