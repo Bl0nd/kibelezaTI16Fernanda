@@ -110,15 +110,8 @@
             // cmbEmpresa
             // 
             this.cmbEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEmpresa.Enabled = false;
             this.cmbEmpresa.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEmpresa.FormattingEnabled = true;
-            this.cmbEmpresa.Items.AddRange(new object[] {
-            "02:00",
-            "04:00",
-            "06:00",
-            "8:00",
-            "10:00"});
             this.cmbEmpresa.Location = new System.Drawing.Point(876, 279);
             this.cmbEmpresa.Name = "cmbEmpresa";
             this.cmbEmpresa.Size = new System.Drawing.Size(309, 31);
@@ -162,15 +155,8 @@
             // cmbCargaHoraria
             // 
             this.cmbCargaHoraria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCargaHoraria.Enabled = false;
             this.cmbCargaHoraria.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCargaHoraria.FormattingEnabled = true;
-            this.cmbCargaHoraria.Items.AddRange(new object[] {
-            "02:00",
-            "04:00",
-            "06:00",
-            "8:00",
-            "10:00"});
             this.cmbCargaHoraria.Location = new System.Drawing.Point(1006, 224);
             this.cmbCargaHoraria.Name = "cmbCargaHoraria";
             this.cmbCargaHoraria.Size = new System.Drawing.Size(179, 31);
@@ -220,7 +206,6 @@
             // cmbStatus
             // 
             this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbStatus.Enabled = false;
             this.cmbStatus.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Location = new System.Drawing.Point(446, 210);
@@ -340,7 +325,6 @@
             // cmbNivel
             // 
             this.cmbNivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbNivel.Enabled = false;
             this.cmbNivel.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbNivel.FormattingEnabled = true;
             this.cmbNivel.Items.AddRange(new object[] {

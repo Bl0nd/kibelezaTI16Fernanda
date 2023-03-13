@@ -124,7 +124,7 @@ namespace kibelezaTI16Fernanda
             try
             {
                 banco.Conectar();
-                string inserir = "INSERT INTO `cliente`(`idCliente`,`nomeCliente`,`emailCliente`,`senhaCliente`,`statusCliente`,`dataCadCliente`,`fotoCliente`) VALUES (DEFAULT,@nomeCliente,@emailCliente,@senhaCliente,@statusCliente,@dataCadCliente,@fotoCliente);";
+                string inserir = "INSERT INTO `cliente`(`idCliente`, `nomeCliente`, `emailCliente`, `senhaCliente`, `statusCliente`, `dataCadCliente`, `fotoCliente`) VALUES (DEFAULT,@nomeCliente,@emailCliente,@senhaCliente,@statusCliente,@dataCadCliente,@fotoCliente);";
                 MySqlCommand cmd = new MySqlCommand(inserir, banco.conexao);
                 cmd.Parameters.AddWithValue("@nomeCliente", variaveis.nomeCliente);
                 cmd.Parameters.AddWithValue("@emailCliente", variaveis.emailCliente);
@@ -165,7 +165,7 @@ namespace kibelezaTI16Fernanda
             try
             {
                 banco.Conectar();
-                string alterar = "UPDATE `cliente` SET `nomeCliente`=@nomeCliente,`emailCliente`=@emailCliente,`senhaCliente`=@senhaCliente,´statusCliente`=@statusCliente WHERE `idCliente`= @codigo;";
+                string alterar = "UPDATE `cliente` SET `nomeCliente`=@nomeCliente,`emailCliente`=@emailCliente,`senhaCliente`=@senhaCliente,`statusCliente`=@statusCliente  WHERE `idCliente`= @codigo;";
                 MySqlCommand cmd = new MySqlCommand(alterar, banco.conexao);
                 cmd.Parameters.AddWithValue("@nomeCliente", variaveis.nomeCliente);
                 cmd.Parameters.AddWithValue("@emailCliente", variaveis.emailCliente);
@@ -184,7 +184,7 @@ namespace kibelezaTI16Fernanda
         private void AlterarFotoCliente()
         {
             banco.Conectar();
-            string alterar = "UPDATE `cliente` SET ´fotoCliente`=@fotoCliente WHERE `idCliente`= @codigo;";
+            string alterar = "UPDATE `cliente` SET `fotoCliente`=@fotoCliente WHERE `idCliente`= @codigo;";
             MySqlCommand cmd = new MySqlCommand(alterar, banco.conexao);
             cmd.Parameters.AddWithValue("@fotoCliente", variaveis.fotoCliente);
             cmd.Parameters.AddWithValue("@codigo", variaveis.codCliente);
@@ -212,7 +212,7 @@ namespace kibelezaTI16Fernanda
             try
             {
                 banco.Conectar();
-                string inserir = "INSERT INTO `fonecliente`(`idFoneCliente`,`numeroCliente`,`operFoneCliente`,`descFoneCliente`,`idCliente`) VALUES (DEFAULT,@numeroFone,@operFone,@descFone,@codCliente);";
+                string inserir = "INSERT INTO `fonecliente` (`idFoneCliente`,`numeroCliente`,`operFoneCliente`,`descFoneCliente`,`idCliente`) VALUES (DEFAULT,@numeroFone,@operFone,@descFone,@codCliente);";
                 MySqlCommand cmd = new MySqlCommand(inserir, banco.conexao);
                 cmd.Parameters.AddWithValue("@numeroFone", variaveis.numeroFoneCliente);
                 cmd.Parameters.AddWithValue("@operFone", variaveis.operFoneCliente);
@@ -480,7 +480,7 @@ namespace kibelezaTI16Fernanda
                 DialogResult dr = ofdFoto.ShowDialog();
                 pctFoto.Image = Image.FromFile(ofdFoto.FileName);
 
-                if(ofdFoto.FileName.Substring(ofdFoto.FileName.Length - 8) == "user.png")
+                if (ofdFoto.FileName.Substring(ofdFoto.FileName.Length - 8) == "user.png")
                 {
                     variaveis.fotoCliente = "cliente/user.png";
                 }
@@ -497,7 +497,7 @@ namespace kibelezaTI16Fernanda
                     }
                     catch (SecurityException ex)
                     {
-                        MessageBox.Show("Erro de segurança - Fale com o Admin \n Mensagem: " + ex + " \n Detalhe: \n" + ex.StackTrace);                            
+                        MessageBox.Show("Erro de segurança - Fale com o Admin \n Mensagem: " + ex + " \n Detalhe: \n" + ex.StackTrace);
                     }
                     catch (Exception ex)
                     {
@@ -516,16 +516,16 @@ namespace kibelezaTI16Fernanda
 
         private void mkdFone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
                 cmbOperadora.Enabled = true;
                 cmbOperadora.Focus();
             }
 
         }
-       private void cmbOperadora_KeyPress(object sender, KeyPressEventArgs e)
+        private void cmbOperadora_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
                 txtDescricao.Enabled = true;
                 txtDescricao.Focus();
@@ -534,7 +534,7 @@ namespace kibelezaTI16Fernanda
 
         private void txtDescricao_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
                 btnSalvarFone.Enabled = true;
                 btnSalvarFone.Focus();
@@ -543,7 +543,7 @@ namespace kibelezaTI16Fernanda
 
         private void btnSalvarFone_Click(object sender, EventArgs e)
         {
-            if(mkdFone.MaskCompleted == false)
+            if (mkdFone.MaskCompleted == false)
             {
                 MessageBox.Show("Preencher o telefone");
                 mkdFone.Focus();
@@ -564,11 +564,11 @@ namespace kibelezaTI16Fernanda
                 variaveis.operadoraCliente = cmbOperadora.Text;
                 variaveis.descricaoCliente = txtDescricao.Text;
 
-                if(variaveis.funcao == "CADASTRAR FONE")
+                if (variaveis.funcao == "CADASTRAR FONE")
                 {
                     InserirFoneCliente();
                 }
-                else if (variaveis.funcao ==  "ALTERAR FONE")
+                else if (variaveis.funcao == "ALTERAR FONE")
                 {
                     AlterarFoneCliente();
                 }
@@ -580,7 +580,7 @@ namespace kibelezaTI16Fernanda
         {
             variaveis.linhaSelecionada = -1;
             variaveis.linhaSelecionada = int.Parse(e.RowIndex.ToString());
-            if(variaveis.linhaSelecionada >=0)
+            if (variaveis.linhaSelecionada >= 0)
             {
                 variaveis.codFoneCliente = Convert.ToInt32(dgvFoneCliente[0, variaveis.linhaSelecionada].Value);
                 txtCodigo.Text = variaveis.codFoneCliente.ToString();
@@ -618,9 +618,9 @@ namespace kibelezaTI16Fernanda
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if(variaveis.linhaSelecionada >=0)
+            if (variaveis.linhaSelecionada >= 0)
             {
-                var resultado = MessageBox.Show("Deseja realmente excluir ?", "EXCLUIR" , MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var resultado = MessageBox.Show("Deseja realmente excluir ?", "EXCLUIR", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (resultado == DialogResult.Yes)
                 {
                     ExcluirFoneCliente();

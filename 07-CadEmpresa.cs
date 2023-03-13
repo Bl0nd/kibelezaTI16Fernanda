@@ -91,7 +91,7 @@ namespace kibelezaTI16Fernanda
             try
             {
                 banco.Conectar();
-                string alterar = "UPDATE `empresa` SET `nomeFantasiaEmpresa`=@nomeEmpresa, `cnpjCpfEmpresa`=cnpjCpf, `razaoSocialEmpresa`=razaoSocial, `emailEmpresa`=@emailEmpresa, `statusEmpresa`=@statusEmpresa,`horarioAtendEmpresa`=@horarioEmpresa WHERE `idEmpresa`=@codigo;";
+                string alterar = "UPDATE `empresa` SET `nomeFantasiaEmpresa`=@nomeEmpresa, `cnpjCpfEmpresa`=@cnpjCpf, `razaoSocialEmpresa`=@razaoSocial, `emailEmpresa`=@emailEmpresa, `statusEmpresa`=@statusEmpresa,`horarioAtendEmpresa`=@horarioEmpresa WHERE `idEmpresa`=@codigo;";
                 MySqlCommand cmd = new MySqlCommand(alterar, banco.conexao);
                 cmd.Parameters.AddWithValue("@nomeEmpresa", variaveis.nomeEmpresa);
                 cmd.Parameters.AddWithValue("@cnpjCpf", variaveis.cnpjCpfEmpresa);
@@ -142,7 +142,7 @@ namespace kibelezaTI16Fernanda
             try
             {
                 banco.Conectar();
-                string selecionar = "SELECT MAX(idEmpresa) FROM ´empresa`";
+                string selecionar = "SELECT MAX(idEmpresa) FROM `empresa`";
                 MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexao);
                 MySqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())

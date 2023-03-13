@@ -104,7 +104,7 @@ namespace kibelezaTI16Fernanda
             try
             {
                 banco.Conectar();
-                string excluir = "DELETE FROM `cliente` WHERE ´idCliente`=@codigo";
+                string excluir = "DELETE FROM `cliente` WHERE `idCliente`=@codigo";
                 MySqlCommand cmd = new MySqlCommand(excluir, banco.conexao);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

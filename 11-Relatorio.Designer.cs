@@ -81,6 +81,7 @@
             this.btnAtualizar.Size = new System.Drawing.Size(45, 49);
             this.btnAtualizar.TabIndex = 6;
             this.btnAtualizar.UseVisualStyleBackColor = false;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // pnlFiltro
             // 
@@ -183,6 +184,7 @@
             this.btnSalvar.TabIndex = 4;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnFechar
             // 
