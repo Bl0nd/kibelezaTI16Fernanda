@@ -441,5 +441,6 @@ namespace kibelezaTI16Fernanda
             dgvFoneEmpresa.Sort(dgvFoneEmpresa.Columns[1], ListSortDirection.Ascending);
             dgvFoneEmpresa.ClearSelection();
         }
+
     }
 }

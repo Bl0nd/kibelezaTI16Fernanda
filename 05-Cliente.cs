@@ -84,7 +84,7 @@ namespace kibelezaTI16Fernanda
             try
             {
                 banco.Conectar();
-                string selecionar = "SELECT * FROM `clientecompleto` WHERE ´NOME CLIENTE` LIKE `%"+variaveis.nomeCliente+"%´";
+                string selecionar = "SELECT * FROM `clientecompleto` WHERE ´NOME CLIENTE` LIKE `%" + variaveis.nomeCliente + "%´";
                 MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexao);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -181,7 +181,7 @@ namespace kibelezaTI16Fernanda
             {
                 CarregarClienteAtivo();
             }
-            else if(cmbStatus.Text == "INATIVO")
+            else if (cmbStatus.Text == "INATIVO")
             {
                 CarregarClienteInativo();
             }
@@ -210,7 +210,7 @@ namespace kibelezaTI16Fernanda
         private void dgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             variaveis.linhaSelecionada = int.Parse(e.RowIndex.ToString());
-            if(variaveis.linhaSelecionada >=0)
+            if (variaveis.linhaSelecionada >= 0)
             {
                 variaveis.codCliente = Convert.ToInt32(dgvCliente[0, variaveis.linhaSelecionada].Value);
             }

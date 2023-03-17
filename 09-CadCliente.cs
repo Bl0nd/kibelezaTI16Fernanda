@@ -254,7 +254,7 @@ namespace kibelezaTI16Fernanda
             try
             {
                 banco.Conectar();
-                string selecionar = "SELECT MAX (idCliente) FROM `cliente`";
+                string selecionar = "SELECT MAX(idCliente) FROM `cliente`";
                 MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexao);
                 MySqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
